@@ -11,7 +11,7 @@ export interface LeagueTable {
     matchday: number;
     standing: [
     {
-      links: {
+      _links: {
         team: {
           href: string;
         }

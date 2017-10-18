@@ -13,4 +13,15 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Extracts the team id from team Link after last occurence of slash
+   * This avoids fetching team leagues ids due to low free available api requests.
+   * @param {string} teamLink
+   * @returns
+   * @memberof NavbarComponent
+   */
+  removeChars(teamLink: string) {
+    return teamLink.substring(teamLink.lastIndexOf('/') + 1);
+  }
+
 }

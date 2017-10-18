@@ -6,16 +6,18 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
+import { TeamComponent } from './components/team/team.component';
 
 import { FootdataService } from './services/footdata.service';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'team', component: TeamComponent},
 ];
 
 @NgModule({
   declarations: [
-    AppComponent, NavbarComponent, HomeComponent
+    AppComponent, NavbarComponent, HomeComponent, TeamComponent
   ],
   imports: [
     BrowserModule,
