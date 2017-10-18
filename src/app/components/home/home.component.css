@@ -5,3 +5,8 @@ th {
 .table-bordered>thead>tr>th {
     border: 2px solid #dddddd;
 }
+
+.left {
+    text-align: left;
+    font-weight: normal;
+}

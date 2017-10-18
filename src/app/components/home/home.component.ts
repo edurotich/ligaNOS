@@ -10,6 +10,9 @@ import { LeagueTable } from './leaguetable.interface';
 export class HomeComponent implements OnInit {
 
   leagueTables: LeagueTable[];
+  isHome = false;
+  isAway = false;
+  overall = true;
 
   constructor(private footdata: FootdataService) {
   }
@@ -22,14 +25,30 @@ export class HomeComponent implements OnInit {
 
   }
 
-  getTotalGoals(data) {
+  /**
+   * Receives object property as parameter (data)
+   * loops through data and counts the total of goals
+   *
+   * @param {any} data
+   * @returns {number}
+   * @memberof HomeComponent
+   */
+  getTotalGoals(data): number {
     if (data) {
       let total = 0;
       data.forEach((d) => {
-          total += parseInt(d.goals, 10); // get the correct property and pass it to integer
+          total += parseInt(d.goals, 10); // select goals property from data and pass it to decimal
       });
       return total;
     }
+  }
+
+  toggleHome() {
+    this.isHome = !this.isHome;
+  }
+
+  toggleAway() {
+    this.isAway = !this.isAway;
   }
 
 }

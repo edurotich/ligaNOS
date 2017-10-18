@@ -1,11 +1,15 @@
 <div class="row">
     <div class="col-lg-12">
+        
         <table class="table table-striped table-hover table-bordered" > <!--  -->
             <thead>
                 <tr>
-                    <th colspan="10" class=""></th>
-                    <th colspan="5">Casa</th>
-                    <th colspan="5">Fora</th>
+                    <th colspan="10" class="left">Mostrar/Ocultar: 
+                        <a (click)="toggleHome()">Jogos Casa</a> | 
+                        <a (click)="toggleAway()">Jogos Fora</a>
+                    </th>
+                    <th colspan="5" *ngIf=isHome>Casa</th>
+                    <th colspan="5" *ngIf=isAway>Fora</th>
                 </tr>
                 <tr>
                 <th>#</th>
@@ -18,16 +22,16 @@
                 <th>V</th>
                 <th>E</th>
                 <th>D</th>
-                <th>G</th>
-                <th>GC</th>
-                <th>V</th>
-                <th>E</th>
-                <th>D</th>
-                <th>G</th>
-                <th>GC</th>
-                <th>V</th>
-                <th>E</th>
-                <th>D</th>
+                <th *ngIf=isHome>G</th>
+                <th *ngIf=isHome>GC</th>
+                <th *ngIf=isHome>V</th>
+                <th *ngIf=isHome>E</th>
+                <th *ngIf=isHome>D</th>
+                <th *ngIf=isAway>G</th>
+                <th *ngIf=isAway>GC</th>
+                <th *ngIf=isAway>V</th>
+                <th *ngIf=isAway>E</th>
+                <th *ngIf=isAway>D</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,16 +46,16 @@
                     <td>{{key.wins}}</td>
                     <td>{{key.draws}}</td>
                     <td>{{key.losses}}</td>
-                    <td>{{key.home.goals}}</td>
-                    <td>{{key.home.goalsAgainst}}</td>
-                    <td>{{key.home.wins}}</td>
-                    <td>{{key.home.draws}}</td>
-                    <td>{{key.home.losses}}</td>
-                    <td>{{key.away.goals}}</td>
-                    <td>{{key.away.goalsAgainst}}</td>
-                    <td>{{key.away.wins}}</td>
-                    <td>{{key.away.draws}}</td>
-                    <td>{{key.away.losses}}</td>
+                    <td *ngIf=isHome>{{key.home.goals}}</td>
+                    <td *ngIf=isHome>{{key.home.goalsAgainst}}</td>
+                    <td *ngIf=isHome>{{key.home.wins}}</td>
+                    <td *ngIf=isHome>{{key.home.draws}}</td>
+                    <td *ngIf=isHome>{{key.home.losses}}</td>
+                    <td *ngIf=isAway>{{key.away.goals}}</td>
+                    <td *ngIf=isAway>{{key.away.goalsAgainst}}</td>
+                    <td *ngIf=isAway>{{key.away.wins}}</td>
+                    <td *ngIf=isAway>{{key.away.draws}}</td>
+                    <td *ngIf=isAway>{{key.away.losses}}</td>
 
                 </tr>
             </tbody>
