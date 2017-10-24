@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Matches } from './matches.interface';
+import { DatePipe } from '@angular/common';
 import { FootdataService } from '../../services/footdata.service';
-import { LeagueTable } from './leaguetable.interface';
 
 @Component({
   selector: 'app-home',
@@ -9,59 +10,47 @@ import { LeagueTable } from './leaguetable.interface';
 })
 export class HomeComponent implements OnInit {
 
-  leagueTables: LeagueTable[];
-  isHome = false;
-  isAway = false;
-  overall = true;
+  currentMatchday: number;
+  numberOfMatchdays: number;
+  matches: Matches[];
 
   constructor(private footdata: FootdataService) {
+    // this.currentMatchday = 9;
   }
 
   ngOnInit() {
-    this.footdata.getLeagueTable().subscribe((data) => {
-      console.log(data);
-      this.leagueTables = data;
-    });
-
+    this.getLeagueInfoAndMatches();
   }
 
-  /**
-   * Receives object property as parameter (data)
-   * loops through data and counts the total of goals
-   *
-   * @param {any} data
-   * @returns {number}
-   * @memberof HomeComponent
-   */
-  getTotalGoals(data): number {
-    if (data) {
-      let total = 0;
-      data.forEach((d) => {
-          total += parseInt(d.goals, 10); // select goals property from data and pass it to decimal
-      });
-      return total;
+  getLeagueInfoAndMatches() {
+    this.footdata.getLeagueInfo().subscribe(
+      data => {
+        this.currentMatchday = data.currentMatchday;
+        this.numberOfMatchdays = data.numberOfMatchdays;
+      }, (err: any) => console.log(err),
+      () => {
+        console.log('finished getLeagueInfo');
+        this.getMatches(this.currentMatchday); // calls getAllMatches when finished
+      }
+    );
+  }
+
+  getMatches(matchday: number) {
+    this.footdata.getMatches(matchday).subscribe(
+      d => {
+        console.log(d);
+        this.matches = d;
+      }, (err: any) => console.log(err),
+      () => { console.log('finished getAllMatches'); }
+    );
+  }
+
+  createRange() {
+    const items = [];
+    for (let i = 1; i <= this.numberOfMatchdays; i++) {
+      items.push(i);
     }
-  }
-
-  toggleHome() {
-    this.isHome = !this.isHome;
-  }
-
-  toggleAway() {
-    this.isAway = !this.isAway;
+    return items;
   }
 
 }
-
-/**
- * Interface could also be set in this component file
- * instead it was created a new leaguetable.interface.ts
- * file and the interface was set there
- *
- * @interface LeagueTable
- */
-/*
-interface LeagueTable {
-  (...)
-}
-*/
