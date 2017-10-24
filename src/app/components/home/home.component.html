@@ -19,7 +19,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let key of matches?.fixtures; let i = index">
-          <td class="date"> {{key.date | date:'short'}} </td>
+          <td class="date"> {{key.date | date:'d/M/y HH:mm'}} </td>
           <td class="hometeam">{{key.homeTeamName}}</td>
           <td class="score">
             <ul class="nav nav-pills">
