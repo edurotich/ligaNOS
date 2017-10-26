@@ -16,35 +16,43 @@ export class LeaguetableComponent implements OnInit {
   constructor(private footdata: FootdataService) { }
 
   ngOnInit() {
+    this.getLeagueTable();
+  }
+
+  /**
+   * Subscribes observable returned from service
+   *
+   * @memberof LeaguetableComponent
+   */
+  getLeagueTable(): void {
     this.footdata.getLeagueTable().subscribe((data) => {
       console.log(data);
       this.leagueTables = data;
     });
   }
 
-   /**
-   * Receives object property as parameter (data)
-   * loops through data and counts the total of goals
-   *
-   * @param {any} data
-   * @returns {number}
-   * @memberof HomeComponent
-   */
-  getTotalGoals(data): number {
+  /**
+  * Loops through data and counts the total of goals
+  *
+  * @param {any} data
+  * @returns {number}
+  * @memberof HomeComponent
+  */
+  getTotalGoals(data: any): number {
     if (data) {
       let total = 0;
       data.forEach((d) => {
-          total += parseInt(d.goals, 10); // select goals property from data and pass it to decimal
+        total += parseInt(d.goals, 10);
       });
       return total;
     }
   }
 
-  toggleHome() {
+  toggleHome(): void {
     this.isHome = !this.isHome;
   }
 
-  toggleAway() {
+  toggleAway(): void {
     this.isAway = !this.isAway;
   }
 

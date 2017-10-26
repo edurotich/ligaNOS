@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   numberOfMatchdays: number;
   matches: Matches[];
   changeCurrentMatchday = false;
+  arrayOfMatchdays: number [];
 
   constructor(private footdata: FootdataService) {
   }
@@ -27,31 +28,48 @@ export class HomeComponent implements OnInit {
   }
 
   /**
-   * Subscribes two observables from footdata service in order by using flatMap.
-   * Because getMatches is dependent from getLeagueInfo flatmap will only make
-   * second request when first has finished.
+   * Subscribes two observables returned from service in order by using flatMap.
+   * Because the subscribes are dependent the 2nd will only start when 1st is finished.
    *
    * @memberof HomeComponent
    */
   getLeagueInfoAndMatches() {
     this.footdata.getLeagueInfo().flatMap(data => {
       this.numberOfMatchdays = data.numberOfMatchdays;
+      this.createRange();
 
-      // If dropdown value hasnt changed gets currentMatchday of the league
+      // If selected value from dropdown hasnt changed gets the current Matchday of the league
       if (this.changeCurrentMatchday === false) {
         this.currentMatchday = data.currentMatchday;
       }
 
       return this.footdata.getMatches(this.currentMatchday);
     }).subscribe(data => {
+      console.log(data);
       this.matches = data;
     });
   }
 
   /**
-   * This approach only uses the subscribe method.
-   * Calls the second observable(getMatches) when getLeagueInfo is complete.
+   * Subscribes an observable returned from the service.
+   * This method is only being called on change events.
    *
+   * @param {any} matchday - the selected matchday
+   * @memberof HomeComponent
+   */
+  getMatches(matchday): void {
+    this.footdata.getMatches(matchday).subscribe(
+      data => {
+        this.matches = data;
+      }, (err: any) => console.log(err),
+      () => {
+        // console.log('finished getAllMatches');
+      }
+    );
+  }
+
+  /**
+   * This second approach only uses the subscribe method.
    * @memberof HomeComponent
    */
   getLeagueInfoAndMatches2(): void {
@@ -67,21 +85,34 @@ export class HomeComponent implements OnInit {
             console.log(data);
             this.matches = data;
           }, (err: any) => console.log(err),
-          () => { console.log('finished getAllMatches'); }
+          () => {
+            // console.log('finished getAllMatches');
+          }
         );
       }
     );
   }
 
+
   /**
-   * Creates a range from 1 to numberOfMatchdays that inserts
-   * the index to the array so it can be used inside *ngFor
+   * Fills the arrayOfMatchdays from 0 to numberOfMatchdays by using ES6 sintax.
    *
-   * @returns {number[]}  array of items
    * @memberof HomeComponent
    */
-  createRange(): number[] {
-    const items = [];
+  createRange(): void {
+    console.log(this.numberOfMatchdays);
+    this.arrayOfMatchdays = Array(this.numberOfMatchdays + 1).fill(null, 1, this.numberOfMatchdays + 1).map((x, i) => i);
+  }
+
+  /**
+   * This second approach returns a range of numbers to be used inside *ngFor.
+   * *ngfor="1 of createRange2()"
+   *
+   * @returns {number[]} -  array of numbers from 1 to numberOfMatchdays
+   * @memberof HomeComponent
+   */
+  createRange2(): number[] {
+    const items: number[] = [];
     for (let i = 1; i <= this.numberOfMatchdays; i++) {
       items.push(i);
     }
@@ -89,16 +120,27 @@ export class HomeComponent implements OnInit {
   }
 
   /**
-   * Gets value from the dropdown menu then updates the currentMatchday
-   * and calls the service to make another GET request
+   * Handle (click) and ngModelChange events.
    *
-   * @param {number} matchday
+   * @param {number} option 0 - change league match | 1 - previous league matches | 2 - next league matches
+   * @param {any} matchday - value sent from the dropdown menu
    * @memberof HomeComponent
    */
-  onChange(matchday: number): void {
-    this.currentMatchday = matchday;
+  onChange(option: number, matchday: any): void {
+    switch (option) {
+      case 0:
+        this.currentMatchday = parseInt(matchday, 10);
+        break;
+      case 1:
+        this.currentMatchday -= 1;
+        break;
+      case 2:
+        this.currentMatchday += 1;
+        break;
+    }
+
     this.changeCurrentMatchday = true;
-    this.getLeagueInfoAndMatches();
+    this.getMatches(this.currentMatchday);
   }
 
 }

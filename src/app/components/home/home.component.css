@@ -15,3 +15,23 @@
 .table > tbody > tr > td {
     vertical-align: middle;
 }
+
+.col-lg-4.text-right {
+    margin-left: 280px;
+    margin-bottom: 5px;
+}
+
+.btn.btn-default.btn-sm {
+    margin-left: 5px;
+}
+
+.nav-pills > li.active > a {
+    background-color: #808080;
+    border-color: #808080;
+}
+
+.nav-pills>.active>a>.badge {
+    color: #808080;
+    border-color: #808080;
+}
+

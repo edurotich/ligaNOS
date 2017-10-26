@@ -1,11 +1,14 @@
 <div class="row">
   <div class="col-lg-5">
-
-    <select class="form-control" [(ngModel)]="currentMatchday" (ngModelChange)="onChange(currentMatchday)">
-      <!--<option [selected]="true" value="currentMatchday">Jornada {{currentMatchday}}</option>-->
-      <option *ngFor="let key of createRange()" [value]="key">Jornada {{key}}</option>
+    <select class="form-control" [(ngModel)]="currentMatchday" (ngModelChange)="onChange(0,currentMatchday)">
+      <option *ngFor="let key of arrayOfMatchdays | slice:1" [value]="key">Jornada {{key}}</option>
     </select>
     <br>
+  </div>
+
+  <div class="col-lg-4 text-right">
+    <a [routerLink]="" (click)="onChange(1,0)" class="btn btn-default btn-sm">Jornada Anterior <<</a>
+        <a [routerLink]="" (click)="onChange(2,0)" class="btn btn-default btn-sm">Jornada Seguinte >></a>
   </div>
 
   <div class="col-lg-12">
@@ -25,7 +28,8 @@
             <ul class="nav nav-pills">
               <li class="active">
                 <a href="#">
-                  <span class="badge">{{key.result.goalsHomeTeam}} - {{key.result.goalsAwayTeam}}</span>
+                  <span class="badge" *ngIf="key.result.goalsHomeTeam !== null && key.result.goalsAwayTeam !== null; else versus">{{key.result.goalsHomeTeam}} - {{key.result.goalsAwayTeam}}</span>
+                  <ng-template #versus>vs</ng-template>
                 </a>
               </li>
             </ul>
