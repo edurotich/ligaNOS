@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Http, Headers, RequestOptions} from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
@@ -11,7 +11,7 @@ export class FootdataService {
   private authToken = '29132a8e28df4ef784a8d0e853aeadee';
   private api_url = 'http://api.football-data.org/v1/';
 
-  private headers = new Headers({'Content-Type': 'application/json;charset=UTF-8'});
+  private headers = new Headers({ 'Content-Type': 'application/json;charset=UTF-8' });
 
   constructor(public http: Http) {
     this.headers.append('X-auth-token', this.authToken);
@@ -27,8 +27,8 @@ export class FootdataService {
     const options: RequestOptions = new RequestOptions({ headers: this.headers });
 
     return this.http.get(this.api_url + 'competitions/457/leagueTable', options)
-    .map(res => res.json())
-    .catch(this.catchError);
+      .map(res => res.json())
+      .catch(this.catchError);
   }
 
   /**
@@ -38,12 +38,12 @@ export class FootdataService {
    * @returns {Observable<any>}
    * @memberof FootdataService
    */
-  getMatches(matchday: number): Observable<any>  {
+  getMatches(matchday: number): Observable<any> {
     const options: RequestOptions = new RequestOptions({ headers: this.headers });
 
     return this.http.get(this.api_url + 'competitions/457/fixtures?matchday=' + matchday, options) // ?matchday=
-    .map(res => res.json())
-    .catch(this.catchError);
+      .map(res => res.json())
+      .catch(this.catchError);
   }
 
   /**
@@ -56,10 +56,25 @@ export class FootdataService {
     const options: RequestOptions = new RequestOptions({ headers: this.headers });
 
     return this.http.get(this.api_url + 'competitions/457', options)
-    .map(res => res.json())
-    .catch(this.catchError);
+      .map(res => res.json())
+      .catch(this.catchError);
   }
 
+  getHead2Head(head2headId: number): Observable<any> {
+    const options: RequestOptions = new RequestOptions({ headers: this.headers });
+
+    return this.http.get(this.api_url + 'fixtures/' + head2headId, options)
+      .map(res => res.json())
+      .catch(this.catchError);
+  }
+
+  getTeamInfo(teamId: number): Observable<any> {
+    const options: RequestOptions = new RequestOptions({ headers: this.headers });
+
+    return this.http.get(this.api_url + 'teams/' + teamId, options)
+      .map(res => res.json())
+      .catch(this.catchError);
+  }
 
   /**
    * Catch errors that are thrown by the observables
@@ -71,7 +86,7 @@ export class FootdataService {
    */
   private catchError(error: Response | any) {
     console.log(error);
-    return Observable.throw(error.json().error || 'Server error' );
+    return Observable.throw(error.json().error || 'Server error');
   }
 
 }

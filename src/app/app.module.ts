@@ -10,9 +10,10 @@ import { HomeComponent } from './components/home/home.component';
 import { TeamComponent } from './components/team/team.component';
 import { LeaguetableComponent } from './components/leaguetable/leaguetable.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { Head2headComponent } from './components/head2head/head2head.component';
 
 import { FootdataService } from './services/footdata.service';
-import { Head2headComponent } from './components/head2head/head2head.component';
+import { HelperService } from './services/helper.service';
 
 
 const appRoutes: Routes = [
@@ -20,6 +21,7 @@ const appRoutes: Routes = [
   {path: 'team/:id', component: TeamComponent},
   {path: 'leaguetable', component: LeaguetableComponent},
   {path: 'calendar', component: CalendarComponent},
+  {path: 'head2head/:id', component: Head2headComponent},
 ];
 
 @NgModule({
@@ -38,7 +40,7 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [FootdataService],
+  providers: [FootdataService, HelperService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

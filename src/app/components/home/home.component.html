@@ -7,13 +7,14 @@
   </div>
 
   <div class="col-lg-4 text-right">
-    <a [routerLink]="" (click)="onChange(1,0)" class="btn btn-default btn-sm">Jornada Anterior <<</a>
+    <a [routerLink]="" (click)="onChange(1,0)" class="btn btn-default btn-sm">Jornada Anterior
+      <<</a>
         <a [routerLink]="" (click)="onChange(2,0)" class="btn btn-default btn-sm">Jornada Seguinte >></a>
   </div>
 
   <div class="col-lg-12">
 
-    <table class="table table-striped table-hover table-bordered">
+    <table class="table table-striped table-hover table-bordered" *ngIf="matches">
       <!--  -->
       <thead>
         <tr>
@@ -21,13 +22,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let key of matches?.fixtures; let i = index">
+        <tr *ngFor="let key of matches.fixtures; let i = index">
           <td class="date"> {{key.date | date:'d/M/y HH:mm'}} </td>
-          <td class="hometeam">{{key.homeTeamName}}</td>
+          <td class="hometeam">{{key.homeTeamName}} </td>
           <td class="score">
             <ul class="nav nav-pills">
               <li class="active">
-                <a href="#">
+                <a routerLink="/head2head/{{ getLastOccurrence(key._links.self.href) }}">
                   <span class="badge" *ngIf="key.result.goalsHomeTeam !== null && key.result.goalsAwayTeam !== null; else versus">{{key.result.goalsHomeTeam}} - {{key.result.goalsAwayTeam}}</span>
                   <ng-template #versus>vs</ng-template>
                 </a>

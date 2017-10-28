@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Matches } from './matches.interface';
 import { DatePipe } from '@angular/common';
 import { FootdataService } from '../../services/footdata.service';
+import { HelperService } from '../../services/helper.service';
 import 'rxjs/add/operator/mergeMap'; // enables flatMap
 
 @Component({
@@ -15,9 +16,9 @@ export class HomeComponent implements OnInit {
   numberOfMatchdays: number;
   matches: Matches[];
   changeCurrentMatchday = false;
-  arrayOfMatchdays: number [];
+  arrayOfMatchdays: number[];
 
-  constructor(private footdata: FootdataService) {
+  constructor(private footdata: FootdataService, private helper: HelperService) {
   }
 
   ngOnInit() {
@@ -34,7 +35,7 @@ export class HomeComponent implements OnInit {
    * @memberof HomeComponent
    */
   getLeagueInfoAndMatches() {
-    this.footdata.getLeagueInfo().flatMap(data => {
+    this.footdata.getLeagueInfo().flatMap((data: any) => {
       this.numberOfMatchdays = data.numberOfMatchdays;
       this.createRange();
 
@@ -44,10 +45,13 @@ export class HomeComponent implements OnInit {
       }
 
       return this.footdata.getMatches(this.currentMatchday);
-    }).subscribe(data => {
+    }).subscribe((data: any) => {
       console.log(data);
       this.matches = data;
-    });
+    }, (err: any) => console.log(err),
+      () => {
+        console.log('finished getLeagueInfoAndMatches()');
+      });
   }
 
   /**
@@ -59,11 +63,11 @@ export class HomeComponent implements OnInit {
    */
   getMatches(matchday): void {
     this.footdata.getMatches(matchday).subscribe(
-      data => {
+      (data: any) => {
         this.matches = data;
       }, (err: any) => console.log(err),
       () => {
-        // console.log('finished getAllMatches');
+        console.log('finished getMatches()');
       }
     );
   }
@@ -74,19 +78,19 @@ export class HomeComponent implements OnInit {
    */
   getLeagueInfoAndMatches2(): void {
     this.footdata.getLeagueInfo().subscribe(
-      data => {
+      (data: any) => {
         this.currentMatchday = data.currentMatchday;
         this.numberOfMatchdays = data.numberOfMatchdays;
       }, (err: any) => console.log(err),
       () => {
         console.log('finished getLeagueInfo');
         this.footdata.getMatches(this.currentMatchday).subscribe(
-          data => {
+          (data: any) => {
             console.log(data);
             this.matches = data;
           }, (err: any) => console.log(err),
           () => {
-            // console.log('finished getAllMatches');
+            // console.log('finished getLeagueInfoAndMatches2()');
           }
         );
       }
@@ -105,8 +109,7 @@ export class HomeComponent implements OnInit {
   }
 
   /**
-   * This second approach returns a range of numbers to be used inside *ngFor.
-   * *ngfor="1 of createRange2()"
+   * This second approach returns a range of numbers to be used inside *ngFor (*ngfor="1 of createRange2()" )
    *
    * @returns {number[]} -  array of numbers from 1 to numberOfMatchdays
    * @memberof HomeComponent
@@ -141,6 +144,17 @@ export class HomeComponent implements OnInit {
 
     this.changeCurrentMatchday = true;
     this.getMatches(this.currentMatchday);
+  }
+
+  /**
+   * Sends a link to the helper service and returns the last occurrence after slash
+   *
+   * @param {string} link
+   * @returns {string} gets a link and returns an id
+   * @memberof HomeComponent
+   */
+  getLastOccurrence(link: string): number {
+    return this.helper.getLastOccurrence(link);
   }
 
 }

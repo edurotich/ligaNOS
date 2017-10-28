@@ -1,0 +1,8 @@
+ul.nav.nav-pills{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.table > tbody > tr > td {
+    vertical-align: middle;
+}
