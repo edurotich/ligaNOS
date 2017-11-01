@@ -48,7 +48,7 @@ export class Head2headComponent implements OnInit {
     }, (err: any) => console.log(err));
   }
 
-  getHead2HeadAndTeamInfo() {
+  getHead2HeadAndTeamInfo(): void {
     this.footdata.getHead2Head(this.head2headId).subscribe(
       data => {
         this.head2head = data;
@@ -72,21 +72,18 @@ export class Head2headComponent implements OnInit {
       });
   }
 
-  /*
-  getHead2HeadAndTeamInfo2() {
-    this.footdata.getHead2Head(this.head2headId).flatMap((data: any) => {
-      this.head2head = data;
-      this.homeTeamId = this.helper.getLastOccurrence(data.fixture._links.homeTeam.href);
-      this.awayTeamId = this.helper.getLastOccurrence(data.fixture._links.awayTeam.href);
-
-      return this.footdata.getTeamInfo(this.homeTeamId);
-    }).flatMap((data: any) => {
-      this.homeTeamLogo = data.crestUrl;
-
-      return this.footdata.getTeamInfo(this.awayTeamId);
-    }).subscribe((data: any) => {
-      this.awayTeamLogo = data.crestUrl;
+  countTeamGoals(data: any[], teamName: string): number {
+    let total = 0;
+    data.forEach((d) => {
+      if (teamName === d.homeTeamName) {
+        total += parseInt(d.result.goalsHomeTeam, 10);
+      } else if (teamName === d.awayTeamName) {
+        total += parseInt(d.result.goalsAwayTeam, 10);
+      }
     });
-  }*/
+    return total;
+
+  }
+
 
 }

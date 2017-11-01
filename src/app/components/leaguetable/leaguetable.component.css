@@ -10,3 +10,11 @@ th {
     text-align: left;
     font-weight: normal;
 }
+
+.glyphicon.glyphicon-circle-arrow-up {
+    color:  #00ff00;
+}
+
+.glyphicon.glyphicon-circle-arrow-down {
+    color: #ff3300;
+}

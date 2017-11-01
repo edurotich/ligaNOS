@@ -15,6 +15,7 @@ import { Head2headComponent } from './components/head2head/head2head.component';
 import { FootdataService } from './services/footdata.service';
 import { HelperService } from './services/helper.service';
 
+import { AngularSvgIconModule } from 'angular-svg-icon';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -39,6 +40,7 @@ const appRoutes: Routes = [
     HttpModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
+    AngularSvgIconModule
   ],
   providers: [FootdataService, HelperService],
   bootstrap: [AppComponent],

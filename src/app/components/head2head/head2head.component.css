@@ -1,8 +1,29 @@
-ul.nav.nav-pills{
-    display: inline-block;
-    vertical-align: middle;
-}
-
 .table > tbody > tr > td {
     vertical-align: middle;
+    text-align: center;
+}
+
+.jumbotron.text-center {
+    border-radius: 0px;
+    padding: 10px 0px 0px 0px;
+    
+}
+
+.nav-pills > li.active > a {
+    background-color: #808080;
+    border-color: #808080;
+}
+
+.nav-pills>.active>a>.badge {
+    color: #808080;
+    border-color: #808080;
+}
+
+.score {
+    float: none;
+    width: 10px;
+}
+
+.hometeam{
+    text-align: right;
 }

@@ -1,15 +1,15 @@
 export interface LeagueTable {
-    links: {
-      self: {
-        href: string;
-      },
-      competition: {
-        href: string;
-      }
-    };
-    leagueCaption: string;
-    matchday: number;
-    standing: [
+  _links: {
+    self: {
+      href: string;
+    },
+    competition: {
+      href: string;
+    }
+  };
+  leagueCaption: string;
+  matchday: number;
+  standing: [
     {
       _links: {
         team: {
@@ -42,4 +42,4 @@ export interface LeagueTable {
         losses: number;
       }
     }];
-  }
+}

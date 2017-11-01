@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-12">
 
-        <table class="table table-striped table-hover table-bordered" *ngIf="leagueTables">
+        <table class="table table-striped table-hover table-bordered" *ngIf="leagueTables && previousLeagueTable">
             <!--  -->
             <thead>
                 <tr>
@@ -23,21 +23,36 @@
                     <th>V</th>
                     <th>E</th>
                     <th>D</th>
-                    <th *ngIf=isHome>G</th>
-                    <th *ngIf=isHome>GC</th>
-                    <th *ngIf=isHome>V</th>
-                    <th *ngIf=isHome>E</th>
-                    <th *ngIf=isHome>D</th>
-                    <th *ngIf=isAway>G</th>
-                    <th *ngIf=isAway>GC</th>
-                    <th *ngIf=isAway>V</th>
-                    <th *ngIf=isAway>E</th>
-                    <th *ngIf=isAway>D</th>
+                    <ng-container *ngIf="isHome">
+                        <th>G</th>
+                        <th>GC</th>
+                        <th>V</th>
+                        <th>E</th>
+                        <th>D</th>
+                    </ng-container>
+                    <ng-container *ngIf="isAway">
+                        <th>G</th>
+                        <th>GC</th>
+                        <th>V</th>
+                        <th>E</th>
+                        <th>D</th>
+                    </ng-container>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let key of leagueTables.standing; let i = index">
-                    <td [ngClass]="{'info': i==0, 'warning':i==1 || i==2 || i==3, 'danger':i==16 || i==17}">{{key.position}}</td>
+
+                <tr *ngFor="let key of leagueTables.standing; let i = index; ">
+                    <td [ngClass]="{'info': i==0, 'warning':i==1 || i==2 || i==3, 'danger':i==16 || i==17}">
+                        {{key.position}}
+                        <ng-container *ngIf="key.teamName !== previousLeagueTable.standing[i].teamName">
+                            <ng-container *ngIf="getTeamProgress(leagueTables.standing, key.teamName, previousLeagueTable.standing) == 1; else down">
+                                    <span class="glyphicon glyphicon-circle-arrow-up"></span>
+                            </ng-container>
+                            <ng-template #down> <span class="glyphicon glyphicon-circle-arrow-down"></span> </ng-template>
+                        </ng-container>
+
+
+                    </td>
                     <td>
                         <img src="{{key.crestURI}}" height="20" width="18"> {{key.teamName}}</td>
                     <td>{{key.playedGames}}</td>
@@ -48,17 +63,20 @@
                     <td>{{key.wins}}</td>
                     <td>{{key.draws}}</td>
                     <td>{{key.losses}}</td>
-                    <td *ngIf=isHome>{{key.home.goals}}</td>
-                    <td *ngIf=isHome>{{key.home.goalsAgainst}}</td>
-                    <td *ngIf=isHome>{{key.home.wins}}</td>
-                    <td *ngIf=isHome>{{key.home.draws}}</td>
-                    <td *ngIf=isHome>{{key.home.losses}}</td>
-                    <td *ngIf=isAway>{{key.away.goals}}</td>
-                    <td *ngIf=isAway>{{key.away.goalsAgainst}}</td>
-                    <td *ngIf=isAway>{{key.away.wins}}</td>
-                    <td *ngIf=isAway>{{key.away.draws}}</td>
-                    <td *ngIf=isAway>{{key.away.losses}}</td>
-
+                    <ng-container *ngIf="isHome">
+                        <td>{{key.home.goals}}</td>
+                        <td>{{key.home.goalsAgainst}}</td>
+                        <td>{{key.home.wins}}</td>
+                        <td>{{key.home.draws}}</td>
+                        <td>{{key.home.losses}}</td>
+                    </ng-container>
+                    <ng-container *ngIf="isAway">
+                        <td>{{key.away.goals}}</td>
+                        <td>{{key.away.goalsAgainst}}</td>
+                        <td>{{key.away.wins}}</td>
+                        <td>{{key.away.draws}}</td>
+                        <td>{{key.away.losses}}</td>
+                    </ng-container>
                 </tr>
             </tbody>
         </table>
@@ -71,7 +89,9 @@
     </div>
     <div class="bs-component">
         <div class="jumbotron">
-            Total de Golos Marcados: {{getTotalGoals(leagueTables?.standing)}}
+            <ng-container *ngIf="leagueTables">
+                Total de Golos Marcados: {{getTotalGoals(leagueTables.standing)}}
+            </ng-container>
         </div>
     </div>
 </div>

@@ -2,17 +2,23 @@
   <div class="col-lg-12">
 
     <div class="jumbotron text-center" *ngIf="head2head">
-        <img src="{{ homeTeamLogo }}" width="150" height="150"/> 
-        <h1>{{ head2head.fixture.homeTeamName }} vs {{ head2head.fixture.awayTeamName }}</h1> 
-        <img src="{{ awayTeamLogo }}" width="150" height="150"/>
-      <p>Hora de Inicio:
-        <b>{{ head2head.fixture.date | date:'HH:mm' }}</b>
+
+      <h2>
+        <img src="{{ homeTeamLogo }}" width="125" height="125" /> {{ head2head.fixture.homeTeamName }} vs {{ head2head.fixture.awayTeamName }}
+        <img src="{{ awayTeamLogo }}" width="150" height="150" />
+      </h2>
+
+      <p *ngIf="head2head.fixture.status === 'FINISHED' || head2head.fixture.status == null ; else gameTime">
+        Terminado
       </p>
+      <ng-template #gameTime>
+        <p>Hora de Inicio: <b>{{ head2head.fixture.date | date:'HH:mm' }}</b> </p>
+      </ng-template>
       <p>Data:
         <b>{{ head2head.fixture.date | date:'d/M/y' }}</b>
       </p>
       <br>
-      
+
     </div>
     <br>
 
@@ -20,29 +26,95 @@
       <!--  -->
       <thead>
         <tr>
-          <th class="left" colspan="4">
-            <h4>Últimos encontros: (Últimos {{ head2head.head2head.count }} Jogos)<br><br>
-            Vitória( {{head2head.head2head.homeTeamWins / head2head.head2head.count | percent }} )  
-            Empate( {{ head2head.head2head.draws / head2head.head2head.count | percent }} )  
-            Vitória( {{ head2head.head2head.awayTeamWins / head2head.head2head.count | percent }} )
-            
-            <br>
-          </h4>
+          <th class="left" colspan="5">
+            <h4>Últimos encontros: (Últimos {{ head2head.head2head.count }} Jogos)
+              <br>
+              <br>
+
+              <div class="col-lg-1 text-left">
+                <ng-container *ngIf="head2head">
+                  <svg-icon src="../../../assets/images/ball.svg" style="width:20px;height:20px;"></svg-icon>
+                  <br>
+                  <br> {{ countTeamGoals(head2head.head2head.fixtures, head2head.fixture.homeTeamName) }}
+                </ng-container>
+              </div>
+
+              <div class="col-lg-2 text-left">
+                <img src="{{ homeTeamLogo }}" width="50" height="50" />
+              </div>
+
+              <div class="col-lg-2">Vitória( {{ head2head.head2head.homeTeamWins / head2head.head2head.count | percent:'.0-0' }} )
+                <br>
+                <br>
+                <div class="progress progress-striped">
+                  <div class="progress-bar progress-bar-success" [style.width]="head2head.head2head.homeTeamWins / head2head.head2head.count | percent:'.0-0'">
+                    {{ head2head.head2head.homeTeamWins}}/{{head2head.head2head.count}}
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-2">Empate( {{ head2head.head2head.draws / head2head.head2head.count | percent:'.0-0' }} )
+                <br>
+                <br>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-info" [style.width]="head2head.head2head.draws / head2head.head2head.count | percent:'.0-0'">
+                    {{head2head.head2head.draws}}/{{head2head.head2head.count}}
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-2">Vitória( {{ head2head.head2head.awayTeamWins / head2head.head2head.count | percent:'.0-0' }} )
+                <br>
+                <br>
+                <div class="progress progress-striped">
+                  <div class="progress-bar progress-bar-success" [style.width]="head2head.head2head.awayTeamWins / head2head.head2head.count | percent:'.0-0'">
+                    {{head2head.head2head.awayTeamWins}}/{{head2head.head2head.count}}
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-2 text-right">
+                <img src="{{ awayTeamLogo }}" width="50" height="50" />
+              </div>
+
+              <div class="col-lg-1 text-left">
+                <ng-container *ngIf="head2head">
+                  <svg-icon src="../../../assets/images/ball.svg" style="width:20px;height:20px;"></svg-icon>
+                  <br>
+                  <br> {{ countTeamGoals(head2head.head2head.fixtures, head2head.fixture.awayTeamName) }}
+                </ng-container>
+              </div>
+
+              <br>
+
+            </h4>
           </th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let key of head2head.head2head.fixtures; let i = index">
-          <td>{{key.date | date:'d/M/y '}}</td>
+          <td>{{ key.date | date:'d/M/y' }}</td>
+
           <td>
-            {{key.homeTeamName}}
+            {{ key.homeTeamName }}
+          </td>
+          <td class="score">
             <ul class="nav nav-pills">
               <li class="active">
-                <span class="badge">{{key.result.goalsHomeTeam}} - {{key.result.goalsAwayTeam}}</span>
+                <a href="#">
+                  <span class="badge">{{key.result.goalsHomeTeam}} - {{key.result.goalsAwayTeam}}</span>
+                </a>
               </li>
             </ul>
+          </td>
+          <td>
             {{key.awayTeamName}}
           </td>
+
+          <td *ngIf="key.status === 'FINISHED' || key.status == null">
+            Terminado
+          </td>
+
         </tr>
       </tbody>
     </table>

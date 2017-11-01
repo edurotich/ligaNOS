@@ -31,6 +31,14 @@ export class FootdataService {
       .catch(this.catchError);
   }
 
+  getPreviousLeagueTable(matchday: number): Observable<any> {
+    const options: RequestOptions = new RequestOptions({ headers: this.headers });
+
+    return this.http.get(this.api_url + 'competitions/457/leagueTable?matchday=' + matchday, options)
+      .map(res => res.json())
+      .catch(this.catchError);
+  }
+
   /**
    * Gets current league matchday games from API and returns an observable
    *
@@ -59,7 +67,13 @@ export class FootdataService {
       .map(res => res.json())
       .catch(this.catchError);
   }
-
+  /**
+   * Gets head2head info based on id and returns and observable
+   *
+   * @param {number} head2headId
+   * @returns {Observable<any>}
+   * @memberof FootdataService
+   */
   getHead2Head(head2headId: number): Observable<any> {
     const options: RequestOptions = new RequestOptions({ headers: this.headers });
 
@@ -68,6 +82,13 @@ export class FootdataService {
       .catch(this.catchError);
   }
 
+  /**
+   * Gets team info based on ID and returns an observable
+   *
+   * @param {number} teamId
+   * @returns {Observable<any>}
+   * @memberof FootdataService
+   */
   getTeamInfo(teamId: number): Observable<any> {
     const options: RequestOptions = new RequestOptions({ headers: this.headers });
 
