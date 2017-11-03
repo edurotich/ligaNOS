@@ -18,8 +18,6 @@ export class Head2headComponent implements OnInit {
   head2head: Head2Head[];
   homeTeamLogo: string;
   awayTeamLogo: string;
-  homeTeamId: number;
-  awayTeamId: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -52,15 +50,13 @@ export class Head2headComponent implements OnInit {
     this.footdata.getHead2Head(this.head2headId).subscribe(
       data => {
         this.head2head = data;
-        this.homeTeamId = this.helper.getLastOccurrence(data.fixture._links.homeTeam.href);
-        this.awayTeamId = this.helper.getLastOccurrence(data.fixture._links.awayTeam.href);
 
         Observable.forkJoin(
-          this.footdata.getTeamInfo(this.homeTeamId),
-          this.footdata.getTeamInfo(this.awayTeamId)
+          this.footdata.getTeamInfo(this.helper.getLastOccurrence(data.fixture._links.homeTeam.href)),
+          this.footdata.getTeamInfo(this.helper.getLastOccurrence(data.fixture._links.awayTeam.href))
         ).subscribe((d: any[]) => {
-          this.homeTeamLogo = d[0].crestUrl; // d[0] data for getTeamInfo(this.homeTeamId)
-          this.awayTeamLogo = d[1].crestUrl; // d[1] data for getTeamInfo(this.awayTeamId)
+          this.homeTeamLogo = d[0].crestUrl; // d[0] data for getTeamInfo( ... hometeamID)
+          this.awayTeamLogo = d[1].crestUrl; // d[1] data for getTeamInfo( ... awayteamID)
         }, (err: any) => console.log(err),
           () => {
             // console.log('finished forkjoin');

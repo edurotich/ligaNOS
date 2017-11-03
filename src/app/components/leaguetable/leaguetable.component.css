@@ -18,3 +18,46 @@ th {
 .glyphicon.glyphicon-circle-arrow-down {
     color: #ff3300;
 }
+
+.table>tbody>tr>td.info {
+    background-color: rgba(0, 153, 255, 0.2);
+}
+.table>tbody>tr>td.infolight {
+    background-color: rgba(0, 153, 255, 0.2);
+}
+
+.table>tbody>tr>td.warning {
+    background-color: rgba(255, 170, 43, 0.2);
+}
+
+.table>tbody>tr>td.warninglight {
+    background-color: rgba(255, 204, 128, 0.2);
+}
+
+.glyphicon.glyphicon-stop{
+    border: 1px solid #d9d9d9;
+}
+
+.glyphicon.glyphicon-stop.first {
+    color: rgba(0, 153, 255, 0.2);
+}
+
+.glyphicon.glyphicon-stop.second {
+    color: rgba(0, 153, 255, 0.2);
+}
+
+.glyphicon.glyphicon-stop.third {
+    color: rgba(255, 170, 43, 0.2);
+}
+
+.glyphicon.glyphicon-stop.fourth {
+    color: rgba(255, 204, 128, 0.2);
+}
+
+.glyphicon.glyphicon-stop.fifth {
+    color: rgba(255, 150, 148, 0.2);
+}
+
+
+
+

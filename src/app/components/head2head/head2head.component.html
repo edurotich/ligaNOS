@@ -4,8 +4,8 @@
     <div class="jumbotron text-center" *ngIf="head2head">
 
       <h2>
-        <img src="{{ homeTeamLogo }}" width="125" height="125" /> {{ head2head.fixture.homeTeamName }} vs {{ head2head.fixture.awayTeamName }}
-        <img src="{{ awayTeamLogo }}" width="150" height="150" />
+        <img src="{{ homeTeamLogo }}" width="8%" height="8%" /> {{ head2head.fixture.homeTeamName }} vs {{ head2head.fixture.awayTeamName }}
+        <img src="{{ awayTeamLogo }}" width="8%" height="8%" />
       </h2>
 
       <p *ngIf="head2head.fixture.status === 'FINISHED' || head2head.fixture.status == null ; else gameTime">
@@ -40,7 +40,7 @@
               </div>
 
               <div class="col-lg-2 text-left">
-                <img src="{{ homeTeamLogo }}" width="50" height="50" />
+                <img src="{{ homeTeamLogo }}" width="15%" height="15%" />
               </div>
 
               <div class="col-lg-2">Vitória( {{ head2head.head2head.homeTeamWins / head2head.head2head.count | percent:'.0-0' }} )
@@ -74,7 +74,7 @@
               </div>
 
               <div class="col-lg-2 text-right">
-                <img src="{{ awayTeamLogo }}" width="50" height="50" />
+                <img src="{{ awayTeamLogo }}" width="15%" height="15%" />
               </div>
 
               <div class="col-lg-1 text-left">

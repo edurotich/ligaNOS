@@ -16,6 +16,9 @@ import { FootdataService } from './services/footdata.service';
 import { HelperService } from './services/helper.service';
 
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CalendarModule } from 'angular-calendar';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -40,7 +43,10 @@ const appRoutes: Routes = [
     HttpModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    AngularSvgIconModule
+    AngularSvgIconModule,
+    BrowserAnimationsModule,
+    CalendarModule.forRoot(),
+    NgbModule.forRoot()
   ],
   providers: [FootdataService, HelperService],
   bootstrap: [AppComponent],

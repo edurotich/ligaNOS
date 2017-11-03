@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FootdataService } from '../../services/footdata.service';
 import { LeagueTable } from './leaguetable.interface';
+import { Matches } from '../home/matches.interface';
 
 @Component({
   selector: 'app-leaguetable',
@@ -11,7 +12,8 @@ export class LeaguetableComponent implements OnInit {
 
   leagueTables: LeagueTable[];
   previousLeagueTable: LeagueTable[];
-  currentMatchDay: number;
+  matches: Matches[];
+  firstMatchDate: Date;
   isHome = false;
   isAway = false;
 
@@ -24,17 +26,38 @@ export class LeaguetableComponent implements OnInit {
   getCurrentAndPreviousLeagueTable(): void {
     this.footdata.getLeagueTable().flatMap((data: any) => {
       this.leagueTables = data;
-      this.currentMatchDay = data.matchday;
 
-      return this.footdata.getPreviousLeagueTable(this.currentMatchDay - 1);
+      return this.footdata.getMatches(parseInt(this.leagueTables['matchday'], 10));
+    }).flatMap((data: any) => {
+      this.matches = data;
+
+      this.firstMatchDate = this.getFirstMatchDate(data.fixtures);
+      const todayDate = new Date();
+
+      if (this.firstMatchDate > todayDate) {
+        return this.footdata.getPreviousLeagueTable(this.leagueTables['matchday'] - 2);
+      } else {
+        return this.footdata.getPreviousLeagueTable(this.leagueTables['matchday'] - 1);
+      }
+
+    }).flatMap((data: any) => {
+      this.previousLeagueTable = data;
+
+      return this.footdata.getPreviousLeagueTable(this.leagueTables['matchday'] - 1);
     }).subscribe((data: any) => {
 
-      this.previousLeagueTable = data;
+      const todayDate = new Date();
+
+      if (this.firstMatchDate > todayDate) {
+        this.leagueTables = data;
+      }
     }, (err: any) => console.log(err),
       () => {
         // console.log('finished getCurrentAndPreviousLeagueTable()');
       });
   }
+
+
 
   /**
   * Loops through data and counts the total of goals
@@ -43,14 +66,86 @@ export class LeaguetableComponent implements OnInit {
   * @returns {number}
   * @memberof HomeComponent
   */
-  getTotalGoals(data: any[]): number {
-    if (data) {
-      let total = 0;
-      data.forEach((d) => {
-        total += parseInt(d.goals, 10);
-      });
-      return total;
-    }
+  getTotalScoredGoals(data: any[]): number {
+    let total = 0;
+    data.forEach((d) => {
+      total += parseInt(d.goals, 10);
+    });
+    return total;
+  }
+
+  getTotalConcededGoals(data: any[]): number {
+    let total = 0;
+    data.forEach((d) => {
+      total += parseInt(d.goalsAgainst, 10);
+    });
+    return total;
+  }
+
+  getTeamMostScoredGoals(data: any[]): string {
+    let max = 0, team;
+    data.forEach((d) => {
+      if (d.goalDifference > max) {
+        max = d.goalDifference;
+        team = d.teamName;
+      }
+    });
+    return team;
+  }
+
+  getTeamMostConcededGoals(data: any[]): string {
+    let min = 0, team;
+    data.forEach((d) => {
+      if (d.goalDifference < min) {
+        min = d.goalDifference;
+        team = d.teamName;
+      }
+    });
+    return team;
+  }
+
+  getTeamMostScoredGoalsHome(data: any[]): string {
+    let max = 0, team;
+    data.forEach((d) => {
+      if (d.home.goals >= max) {
+        max = d.home.goals;
+        team = d.teamName;
+      }
+    });
+    return team;
+  }
+
+  getTeamMostConcededGoalsHome(data: any[]): string {
+    let max = 0, team;
+    data.forEach((d) => {
+      if (d.home.goalsAgainst >= max) {
+        max = d.home.goalsAgainst;
+        team = d.teamName;
+      }
+    });
+    return team;
+  }
+
+  getTeamMostScoredGoalsAway(data: any[]): string {
+    let max = 0, team;
+    data.forEach((d) => {
+      if (d.away.goals >= max) {
+        max = d.away.goals;
+        team = d.teamName;
+      }
+    });
+    return team;
+  }
+
+  getTeamMostConcededGoalsAway(data: any[]): string {
+    let max = 0, team;
+    data.forEach((d) => {
+      if (d.away.goalsAgainst >= max) {
+        max = d.away.goalsAgainst;
+        team = d.teamName;
+      }
+    });
+    return team;
   }
 
   toggleHome(): void {
@@ -61,7 +156,7 @@ export class LeaguetableComponent implements OnInit {
     this.isAway = !this.isAway;
   }
 
-  getTeamProgress(data: any, teamName: string, dataprev: any): number {
+  getTeamProgress(data: any[], teamName: string, dataprev: any[]): number {
     let currpos = 0;
     let prevpos = 0;
 
@@ -70,32 +165,26 @@ export class LeaguetableComponent implements OnInit {
         currpos = d.position;
       }
     });
-    // console.log(currpos);
 
     dataprev.forEach((d) => {
       if (d.teamName === teamName) {
         prevpos = d.position;
       }
     });
-    // console.log(prevpos);
 
     if (prevpos > currpos) {
       return 1;
-    }else {
+    } else {
       return 0;
     }
+  }
 
-    /*
-    Object.keys(dataprev).forEach((d, i) => {
-      if (dataprev[i].teamName === teamName) {
-        prevpos = dataprev[i].position;
+  getFirstMatchDate(data: any[]): Date {
+    for (let i = 0; i < data.length; i++) {
+      if (i === 0) {
+        return new Date(data[i].date);
       }
-    });
-
-    console.log(prevpos);
-
-    */
-
+    }
   }
 
 }

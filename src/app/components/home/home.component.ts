@@ -13,7 +13,6 @@ import 'rxjs/add/operator/mergeMap'; // enables flatMap
 export class HomeComponent implements OnInit {
 
   currentMatchday: number;
-  numberOfMatchdays: number;
   matches: Matches[];
   changeCurrentMatchday = false;
   arrayOfMatchdays: number[];
@@ -23,8 +22,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.getLeagueInfoAndMatches();
-
-    // Another approach
     // this.getLeagueInfoAndMatches2();
   }
 
@@ -36,8 +33,7 @@ export class HomeComponent implements OnInit {
    */
   getLeagueInfoAndMatches() {
     this.footdata.getLeagueInfo().flatMap((data: any) => {
-      this.numberOfMatchdays = data.numberOfMatchdays;
-      this.createRange();
+      this.createRange(data.numberOfMatchdays);
 
       // If selected value from dropdown hasnt changed gets the current Matchday of the league
       if (this.changeCurrentMatchday === false) {
@@ -46,11 +42,10 @@ export class HomeComponent implements OnInit {
 
       return this.footdata.getMatches(this.currentMatchday);
     }).subscribe((data: any) => {
-      console.log(data);
       this.matches = data;
     }, (err: any) => console.log(err),
       () => {
-        console.log('finished getLeagueInfoAndMatches()');
+        // console.log('finished getLeagueInfoAndMatches()');
       });
   }
 
@@ -80,7 +75,6 @@ export class HomeComponent implements OnInit {
     this.footdata.getLeagueInfo().subscribe(
       (data: any) => {
         this.currentMatchday = data.currentMatchday;
-        this.numberOfMatchdays = data.numberOfMatchdays;
       }, (err: any) => console.log(err),
       () => {
         console.log('finished getLeagueInfo');
@@ -103,9 +97,8 @@ export class HomeComponent implements OnInit {
    *
    * @memberof HomeComponent
    */
-  createRange(): void {
-    console.log(this.numberOfMatchdays);
-    this.arrayOfMatchdays = Array(this.numberOfMatchdays + 1).fill(null, 1, this.numberOfMatchdays + 1).map((x, i) => i);
+  createRange(numberOfMatchdays: number): void {
+    this.arrayOfMatchdays = Array(numberOfMatchdays + 1).fill(null, 1, numberOfMatchdays + 1).map((x, i) => i);
   }
 
   /**
@@ -114,9 +107,9 @@ export class HomeComponent implements OnInit {
    * @returns {number[]} -  array of numbers from 1 to numberOfMatchdays
    * @memberof HomeComponent
    */
-  createRange2(): number[] {
+  createRange2(numberOfMatchdays: number): number[] {
     const items: number[] = [];
-    for (let i = 1; i <= this.numberOfMatchdays; i++) {
+    for (let i = 1; i <= numberOfMatchdays; i++) {
       items.push(i);
     }
     return items;
