@@ -97,8 +97,11 @@
     <div class="bs-component">
         <div class="jumbotron">
             <ng-container *ngIf="leagueTables">
-                Total de Golos Marcados na Liga: <b>{{ getTotalScoredGoals(leagueTables.standing) }}</b> <br>
-                Total de Golos Sofridos na Liga: <b>{{ getTotalConcededGoals(leagueTables.standing) }}</b><br><br>
+                Total de Golos Marcados na Liga: <b>{{ getTotalScoredGoals(leagueTables.standing) }}</b> <br><br>
+
+                Equipa com Mais Vitórias: <b> {{ getTeamMostWins(leagueTables.standing) }} </b><br>
+                Equipa com Mais Empates: <b> {{ getTeamMostDraws(leagueTables.standing) }} </b><br>
+                Equipa com Mais Derrotas: <b> {{ getTeamMostLosses(leagueTables.standing) }} </b><br><br>
 
                 Equipa com Mais Golos Marcados: <b>{{ getTeamMostScoredGoals(leagueTables.standing) }}</b> <br>
                 Equipa com Mais golos Sofridos: <b>{{ getTeamMostConcededGoals(leagueTables.standing) }}</b> <br><br>

@@ -71,15 +71,41 @@ export class LeaguetableComponent implements OnInit {
     data.forEach((d) => {
       total += parseInt(d.goals, 10);
     });
+    // console.log(total);
     return total;
   }
 
-  getTotalConcededGoals(data: any[]): number {
-    let total = 0;
+  getTeamMostWins(data: any[]): string {
+    let max = 0, team;
     data.forEach((d) => {
-      total += parseInt(d.goalsAgainst, 10);
+      if (d.wins > max) {
+        max = d.wins;
+        team = d.teamName;
+      }
     });
-    return total;
+    return team;
+  }
+
+  getTeamMostDraws(data: any[]): string {
+    let max = 0, team;
+    data.forEach((d) => {
+      if (d.draws > max) {
+        max = d.draws;
+        team = d.teamName;
+      }
+    });
+    return team;
+  }
+
+  getTeamMostLosses(data: any[]): string {
+    let max = 0, team;
+    data.forEach((d) => {
+      if (d.losses > max) {
+        max = d.losses;
+        team = d.teamName;
+      }
+    });
+    return team;
   }
 
   getTeamMostScoredGoals(data: any[]): string {

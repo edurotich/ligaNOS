@@ -54,6 +54,14 @@ export class FootdataService {
       .catch(this.catchError);
   }
 
+  getAllMatches(): Observable<any> {
+    const options: RequestOptions = new RequestOptions({ headers: this.headers });
+
+    return this.http.get(this.api_url + 'competitions/457/fixtures')
+      .map(res => res.json())
+      .catch(this.catchError);
+  }
+
   /**
    * Gets current league info from API and returns an observable
    *
