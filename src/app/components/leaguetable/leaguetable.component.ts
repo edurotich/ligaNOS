@@ -57,8 +57,6 @@ export class LeaguetableComponent implements OnInit {
       });
   }
 
-
-
   /**
   * Loops through data and counts the total of goals
   *

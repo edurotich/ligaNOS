@@ -3,7 +3,8 @@ import { ChangeDetectionStrategy, ViewChild, TemplateRef } from '@angular/core';
 import { startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay, isSameMonth, addHours } from 'date-fns';
 import { Subject } from 'rxjs/Subject';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent } from 'angular-calendar';
+import { CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarDateFormatter, DAYS_OF_WEEK } from 'angular-calendar';
+import { CustomDateFormatter } from './custom-date-formatter.provider';
 
 import { FootdataService } from '../../services/footdata.service';
 import { Calendar } from './calendar.interface';
@@ -28,7 +29,13 @@ const colors: any = {
   selector: 'app-calendar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.css']
+  styleUrls: ['./calendar.component.css'],
+  providers: [
+    {
+      provide: CalendarDateFormatter,
+      useClass: CustomDateFormatter
+    }
+  ]
 })
 export class CalendarComponent implements OnInit {
   calendar: Calendar[];
@@ -61,17 +68,11 @@ export class CalendarComponent implements OnInit {
   refresh: Subject<any> = new Subject();
   events: CalendarEvent[] = [];
 
-  /*
-   {
-     start: startOfDay(new Date()),
-     title: 'An event with no end date',
-     color: colors.red,
-     actions: this.actions
-   },
-   */
-
   locale = 'pt';
   activeDayIsOpen = false;
+
+  weekStartsOn: number = DAYS_OF_WEEK.MONDAY;
+  weekendDays: number[] = [DAYS_OF_WEEK.SATURDAY, DAYS_OF_WEEK.SUNDAY];
 
   constructor(private modal: NgbModal, private footdata: FootdataService) { }
 

@@ -5,15 +5,25 @@ export class HelperService {
 
   constructor() { }
 
-    /**
-   * Extracts an id from a Link after last occurence of slash
+  /**
+ * Extracts an id from a Link after last occurence of slash
+ *
+ * @param {string} link
+ * @returns {string}
+ * @memberof HomeComponent
+ */
+  getLastOccurrence(link: string): number {
+    return parseInt(link.substring(link.lastIndexOf('/') + 1), 10);
+  }
+  /**
+   * Extracts an id from a link between last and previous occurence of slash
    *
    * @param {string} link
-   * @returns {string}
-   * @memberof HomeComponent
+   * @returns {number}
+   * @memberof HelperService
    */
-  getLastOccurrence(link: string): number {
-    return parseInt( link.substring(link.lastIndexOf('/') + 1) , 10) ;
+  getOccurrenceBetweenSlash(link: string): number {
+    return parseInt(link.split('/').slice(-2)[0], 10);
   }
 
 }

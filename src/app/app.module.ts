@@ -11,6 +11,7 @@ import { TeamComponent } from './components/team/team.component';
 import { LeaguetableComponent } from './components/leaguetable/leaguetable.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import { Head2headComponent } from './components/head2head/head2head.component';
+import { TeaminfoComponent } from './components/teaminfo/teaminfo.component';
 
 import { FootdataService } from './services/footdata.service';
 import { HelperService } from './services/helper.service';
@@ -18,14 +19,16 @@ import { HelperService } from './services/helper.service';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarModule } from 'angular-calendar';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'team/:id', component: TeamComponent},
-  {path: 'leaguetable', component: LeaguetableComponent},
-  {path: 'calendar', component: CalendarComponent},
-  {path: 'head2head/:id', component: Head2headComponent},
+  { path: '', component: HomeComponent },
+  { path: 'teams', component: TeamComponent },
+  { path: 'team/:id', component: TeaminfoComponent },
+  { path: 'leaguetable', component: LeaguetableComponent },
+  { path: 'calendar', component: CalendarComponent },
+  { path: 'head2head/:id', component: Head2headComponent },
 ];
 
 @NgModule({
@@ -37,6 +40,7 @@ const appRoutes: Routes = [
     LeaguetableComponent,
     CalendarComponent,
     Head2headComponent,
+    TeaminfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,7 @@ const appRoutes: Routes = [
     AngularSvgIconModule,
     BrowserAnimationsModule,
     CalendarModule.forRoot(),
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
   ],
   providers: [FootdataService, HelperService],
   bootstrap: [AppComponent],
