@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ChangeDetectionStrategy, ViewChild, TemplateRef } from '@angular/core';
+import { ChangeDetectionStrategy, TemplateRef } from '@angular/core';
 import { startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay, isSameMonth, addHours } from 'date-fns';
 import { Subject } from 'rxjs/Subject';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarDateFormatter, DAYS_OF_WEEK } from 'angular-calendar';
+import { CalendarEvent, CalendarEventAction, CalendarDateFormatter, DAYS_OF_WEEK } from 'angular-calendar';
 import { CustomDateFormatter } from './custom-date-formatter.provider';
 
 import { FootdataService } from '../../services/footdata.service';
 import { Calendar } from './calendar.interface';
-
 
 const colors: any = {
   red: {
@@ -40,30 +39,10 @@ const colors: any = {
 export class CalendarComponent implements OnInit {
   calendar: Calendar[];
 
-  @ViewChild('modalContent') modalContent: TemplateRef<any>;
   view = 'month';
   viewDate: Date = new Date();
 
-  modalData: {
-    action: string;
-    event: CalendarEvent;
-  };
-
-  actions: CalendarEventAction[] = [
-    {
-      label: '<i class="fa fa-fw fa-pencil"></i>',
-      onClick: ({ event }: { event: CalendarEvent }): void => {
-        this.handleEvent('Edited', event);
-      }
-    },
-    {
-      label: '<i class="fa fa-fw fa-times"></i>',
-      onClick: ({ event }: { event: CalendarEvent }): void => {
-        this.events = this.events.filter(iEvent => iEvent !== event);
-        this.handleEvent('Deleted', event);
-      }
-    }
-  ];
+  actions: CalendarEventAction[] = [];
 
   refresh: Subject<any> = new Subject();
   events: CalendarEvent[] = [];
@@ -90,27 +69,15 @@ export class CalendarComponent implements OnInit {
     }
   }
 
-  eventTimesChanged({
-    event,
-    newStart,
-    newEnd
-  }: CalendarEventTimesChangedEvent): void {
-    event.start = newStart;
-    event.end = newEnd;
-    this.handleEvent('Dropped or resized', event);
-    this.refresh.next();
-  }
-
-  handleEvent(action: string, event: CalendarEvent): void {
-    this.modalData = { event, action };
-    this.modal.open(this.modalContent, { size: 'lg' });
-  }
-
   ngOnInit() {
     this.getAllMatches();
   }
-
-  getAllMatches(): void {
+/**
+ * Subscribes an observable returned from the service and sets data to type of Calendar
+ *
+ * @memberof CalendarComponent
+ */
+getAllMatches(): void {
     this.footdata.getAllMatches().subscribe(
       (data: any) => {
         this.calendar = data;

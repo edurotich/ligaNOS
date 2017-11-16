@@ -82,11 +82,16 @@
             </tbody>
 
         </table>
-        <span class="glyphicon glyphicon-stop first"></span> Liga dos Campeões<br>
-        <span class="glyphicon glyphicon-stop second"></span> Liga dos Campeões - 3ª Pré-Eliminatória<br>
-        <span class="glyphicon glyphicon-stop third"></span> Liga Europa - 3ª Pré-Eliminatória<br>
-        <span class="glyphicon glyphicon-stop fourth"></span> Liga Europa - 2ª Pré-Eliminatória<br>
-        <span class="glyphicon glyphicon-stop fifth"></span> Despromoção<br>
+        <span class="glyphicon glyphicon-stop first"></span> Liga dos Campeões
+        <br>
+        <span class="glyphicon glyphicon-stop second"></span> Liga dos Campeões - 3ª Pré-Eliminatória
+        <br>
+        <span class="glyphicon glyphicon-stop third"></span> Liga Europa - 3ª Pré-Eliminatória
+        <br>
+        <span class="glyphicon glyphicon-stop fourth"></span> Liga Europa - 2ª Pré-Eliminatória
+        <br>
+        <span class="glyphicon glyphicon-stop fifth"></span> Despromoção
+        <br>
     </div>
 </div>
 
@@ -97,20 +102,30 @@
     <div class="bs-component">
         <div class="jumbotron">
             <ng-container *ngIf="leagueTables">
-                Total de Golos Marcados na Liga: <b>{{ getTotalScoredGoals(leagueTables.standing) }}</b> <br><br>
-
-                Equipa com Mais Vitórias: <b> {{ getTeamMostWins(leagueTables.standing) }} </b><br>
-                Equipa com Mais Empates: <b> {{ getTeamMostDraws(leagueTables.standing) }} </b><br>
-                Equipa com Mais Derrotas: <b> {{ getTeamMostLosses(leagueTables.standing) }} </b><br><br>
-
-                Equipa com Mais Golos Marcados: <b>{{ getTeamMostScoredGoals(leagueTables.standing) }}</b> <br>
-                Equipa com Mais golos Sofridos: <b>{{ getTeamMostConcededGoals(leagueTables.standing) }}</b> <br><br>
-
-                Equipa com Mais Golos Marcados em Casa: <b>{{ getTeamMostScoredGoalsHome(leagueTables.standing) }}</b> <br>
-                Equipa com Mais Golos Sofridos em Casa: <b>{{ getTeamMostConcededGoalsHome(leagueTables.standing) }}</b> <br><br>
-                
-                Equipa com Mais Golos Marcados Fora: <b>{{ getTeamMostScoredGoalsAway(leagueTables.standing) }}</b> <br>
-                Equipa com Mais Golos Sofridos Fora: <b>{{ getTeamMostConcededGoalsAway(leagueTables.standing) }}</b>
+                Total de Golos Marcados na Liga:
+                <b>{{ getTotalScoredGoals(leagueTables.standing) }}</b>
+                <br>
+                <br> Equipa com Mais Vitórias:
+                <b> {{ getTeamMostWins(leagueTables.standing) }} </b>
+                <br> Equipa com Mais Empates:
+                <b> {{ getTeamMostDraws(leagueTables.standing) }} </b>
+                <br> Equipa com Mais Derrotas:
+                <b> {{ getTeamMostLosses(leagueTables.standing) }} </b>
+                <br>
+                <br> Equipa com Mais Golos Marcados:
+                <b>{{ getTeamMostScoredGoals(leagueTables.standing) }}</b>
+                <br> Equipa com Mais golos Sofridos:
+                <b>{{ getTeamMostConcededGoals(leagueTables.standing) }}</b>
+                <br>
+                <br> Equipa com Mais Golos Marcados em Casa:
+                <b>{{ getTeamMostScoredGoalsHome(leagueTables.standing) }}</b>
+                <br> Equipa com Mais Golos Sofridos em Casa:
+                <b>{{ getTeamMostConcededGoalsHome(leagueTables.standing) }}</b>
+                <br>
+                <br> Equipa com Mais Golos Marcados Fora:
+                <b>{{ getTeamMostScoredGoalsAway(leagueTables.standing) }}</b>
+                <br> Equipa com Mais Golos Sofridos Fora:
+                <b>{{ getTeamMostConcededGoalsAway(leagueTables.standing) }}</b>
             </ng-container>
         </div>
     </div>

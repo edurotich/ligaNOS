@@ -26,4 +26,18 @@ export class HelperService {
     return parseInt(link.split('/').slice(-2)[0], 10);
   }
 
+  /**
+   * Check if a string has only numbers
+   *
+   * @param {string} str
+   * @returns {boolean}
+   * @memberof HelperService
+   */
+  hasOnlyNumbers(str: string): boolean {
+    if (/^\d+$/.test(str)) {
+      return true;
+    }
+    return false;
+  }
+
 }

@@ -4,12 +4,13 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
 import { Observable } from 'rxjs/Observable';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class FootdataService {
 
-  private authToken = '29132a8e28df4ef784a8d0e853aeadee';
-  private api_url = 'http://api.football-data.org/v1/';
+  authToken = environment.authToken;
+  api_url = environment.api_url;
 
   private headers = new Headers({ 'Content-Type': 'application/json;charset=UTF-8' });
 
@@ -30,7 +31,13 @@ export class FootdataService {
       .map(res => res.json())
       .catch(this.catchError);
   }
-
+  /**
+   * Gets previous league table based on matchday and returns an observable
+   *
+   * @param {number} matchday
+   * @returns {Observable<any>}
+   * @memberof FootdataService
+   */
   getPreviousLeagueTable(matchday: number): Observable<any> {
     const options: RequestOptions = new RequestOptions({ headers: this.headers });
 
@@ -124,6 +131,13 @@ export class FootdataService {
       .catch(this.catchError);
   }
 
+  /**
+   * Gets all teams players based on teamId and returns an observable
+   *
+   * @param {number} teamId
+   * @returns {Observable<any>}
+   * @memberof FootdataService
+   */
   getTeamPlayers(teamId: number): Observable<any> {
     const options: RequestOptions = new RequestOptions({ headers: this.headers });
 

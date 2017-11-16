@@ -21,7 +21,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarModule } from 'angular-calendar';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'teams', component: TeamComponent },

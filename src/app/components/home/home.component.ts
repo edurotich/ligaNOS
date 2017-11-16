@@ -12,8 +12,8 @@ import 'rxjs/add/operator/mergeMap'; // enables flatMap
 })
 export class HomeComponent implements OnInit {
 
-  currentMatchday: number;
   matches: Matches[];
+  currentMatchday: number;
   changeCurrentMatchday = false;
   arrayOfMatchdays: number[];
 
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
 
   /**
    * Subscribes two observables returned from service in order by using flatMap.
-   * Because the subscribes are dependent the 2nd will only start when 1st is finished.
+   * Matches subscription is dependent from league info subscription so will only start when 1st has finished.
    *
    * @memberof HomeComponent
    */
@@ -62,7 +62,7 @@ export class HomeComponent implements OnInit {
         this.matches = data;
       }, (err: any) => console.log(err),
       () => {
-        console.log('finished getMatches()');
+        // console.log('finished getMatches()');
       }
     );
   }
@@ -77,10 +77,9 @@ export class HomeComponent implements OnInit {
         this.currentMatchday = data.currentMatchday;
       }, (err: any) => console.log(err),
       () => {
-        console.log('finished getLeagueInfo');
+        // console.log('finished getLeagueInfo');
         this.footdata.getMatches(this.currentMatchday).subscribe(
           (data: any) => {
-            console.log(data);
             this.matches = data;
           }, (err: any) => console.log(err),
           () => {
