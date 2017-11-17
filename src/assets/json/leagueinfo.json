@@ -1,0 +1,25 @@
+{
+  "_links": {
+    "self": {
+      "href": "http://api.football-data.org/v1/competitions/457"
+    },
+    "teams": {
+      "href": "http://api.football-data.org/v1/competitions/457/teams"
+    },
+    "fixtures": {
+      "href": "http://api.football-data.org/v1/competitions/457/fixtures"
+    },
+    "leagueTable": {
+      "href": "http://api.football-data.org/v1/competitions/457/leagueTable"
+    }
+  },
+  "id": 457,
+  "caption": "Primeira Liga 2017/18",
+  "league": "PPL",
+  "year": "2017",
+  "currentMatchday": 11,
+  "numberOfMatchdays": 34,
+  "numberOfTeams": 18,
+  "numberOfGames": 306,
+  "lastUpdated": "2017-11-08T11:00:18Z"
+}

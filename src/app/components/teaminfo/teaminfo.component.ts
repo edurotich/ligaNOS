@@ -47,7 +47,7 @@ export class TeaminfoComponent implements OnInit {
    */
   getTeamPlayers(): void {
     this.footdata.getTeamPlayers(this.teamId).subscribe(
-      (data: any) => {
+      (data: TeamPlayers) => {
         this.teamPlayers = data;
       }, (err: any) => console.log(err),
       () => {

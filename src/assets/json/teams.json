@@ -1,0 +1,337 @@
+{
+    "_links": {
+        "self": {
+            "href": "http://api.football-data.org/v1/competitions/457/teams"
+        },
+        "competition": {
+            "href": "http://api.football-data.org/v1/competitions/457"
+        }
+    },
+    "count": 18,
+    "teams": [
+        {
+            "_links": {
+                "self": {
+                    "href": "http://api.football-data.org/v1/teams/1809"
+                },
+                "fixtures": {
+                    "href": "http://api.football-data.org/v1/teams/1809/fixtures"
+                },
+                "players": {
+                    "href": "http://api.football-data.org/v1/teams/1809/players"
+                }
+            },
+            "name": "Desportivo Aves",
+            "code": null,
+            "shortName": "Aves",
+            "squadMarketValue": null,
+            "crestUrl": null
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "http://api.football-data.org/v1/teams/498"
+                },
+                "fixtures": {
+                    "href": "http://api.football-data.org/v1/teams/498/fixtures"
+                },
+                "players": {
+                    "href": "http://api.football-data.org/v1/teams/498/players"
+                }
+            },
+            "name": "Sporting CP",
+            "code": "SCP",
+            "shortName": "Sporting",
+            "squadMarketValue": null,
+            "crestUrl": "https://upload.wikimedia.org/wikipedia/en/3/3e/Sporting_Clube_de_Portugal.png"
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "http://api.football-data.org/v1/teams/506"
+                },
+                "fixtures": {
+                    "href": "http://api.football-data.org/v1/teams/506/fixtures"
+                },
+                "players": {
+                    "href": "http://api.football-data.org/v1/teams/506/players"
+                }
+            },
+            "name": "Vitoria Setubal",
+            "code": null,
+            "shortName": "Setubal",
+            "squadMarketValue": null,
+            "crestUrl": "http://upload.wikimedia.org/wikipedia/de/b/bd/Vitória_Setúbal.svg"
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "http://api.football-data.org/v1/teams/583"
+                },
+                "fixtures": {
+                    "href": "http://api.football-data.org/v1/teams/583/fixtures"
+                },
+                "players": {
+                    "href": "http://api.football-data.org/v1/teams/583/players"
+                }
+            },
+            "name": "Moreirense FC",
+            "code": null,
+            "shortName": "Moreirense",
+            "squadMarketValue": null,
+            "crestUrl": "https://upload.wikimedia.org/wikipedia/pt/8/8c/Logo_Moreirense.svg"
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "http://api.football-data.org/v1/teams/1808"
+                },
+                "fixtures": {
+                    "href": "http://api.football-data.org/v1/teams/1808/fixtures"
+                },
+                "players": {
+                    "href": "http://api.football-data.org/v1/teams/1808/players"
+                }
+            },
+            "name": "Portimonense S.C.",
+            "code": null,
+            "shortName": null,
+            "squadMarketValue": null,
+            "crestUrl": "https://upload.wikimedia.org/wikipedia/en/e/e9/Portimonense_Sporting_Clube.png"
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "http://api.football-data.org/v1/teams/810"
+                },
+                "fixtures": {
+                    "href": "http://api.football-data.org/v1/teams/810/fixtures"
+                },
+                "players": {
+                    "href": "http://api.football-data.org/v1/teams/810/players"
+                }
+            },
+            "name": "Boavista Porto FC",
+            "code": null,
+            "shortName": "Boavista",
+            "squadMarketValue": null,
+            "crestUrl": "http://upload.wikimedia.org/wikipedia/en/4/40/Boavista_F.C._logo.svg"
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "http://api.football-data.org/v1/teams/500"
+                },
+                "fixtures": {
+                    "href": "http://api.football-data.org/v1/teams/500/fixtures"
+                },
+                "players": {
+                    "href": "http://api.football-data.org/v1/teams/500/players"
+                }
+            },
+            "name": "Feirense",
+            "code": null,
+            "shortName": null,
+            "squadMarketValue": null,
+            "crestUrl": null
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "http://api.football-data.org/v1/teams/1049"
+                },
+                "fixtures": {
+                    "href": "http://api.football-data.org/v1/teams/1049/fixtures"
+                },
+                "players": {
+                    "href": "http://api.football-data.org/v1/teams/1049/players"
+                }
+            },
+            "name": "CD Tondela",
+            "code": null,
+            "shortName": "Tondela",
+            "squadMarketValue": null,
+            "crestUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Emblema_CD_Tondela.png"
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "http://api.football-data.org/v1/teams/496"
+                },
+                "fixtures": {
+                    "href": "http://api.football-data.org/v1/teams/496/fixtures"
+                },
+                "players": {
+                    "href": "http://api.football-data.org/v1/teams/496/players"
+                }
+            },
+            "name": "FC Rio Ave",
+            "code": null,
+            "shortName": "Rio Ave",
+            "squadMarketValue": null,
+            "crestUrl": "http://upload.wikimedia.org/wikipedia/de/6/63/Rio_Ave_FC.svg"
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "http://api.football-data.org/v1/teams/711"
+                },
+                "fixtures": {
+                    "href": "http://api.football-data.org/v1/teams/711/fixtures"
+                },
+                "players": {
+                    "href": "http://api.football-data.org/v1/teams/711/players"
+                }
+            },
+            "name": "C.F. Os Belenenses",
+            "code": null,
+            "shortName": "B. Lisbon",
+            "squadMarketValue": null,
+            "crestUrl": "http://upload.wikimedia.org/wikipedia/de/d/db/Belenenses_Lissabon.svg"
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "http://api.football-data.org/v1/teams/504"
+                },
+                "fixtures": {
+                    "href": "http://api.football-data.org/v1/teams/504/fixtures"
+                },
+                "players": {
+                    "href": "http://api.football-data.org/v1/teams/504/players"
+                }
+            },
+            "name": "Maritimo Funchal",
+            "code": null,
+            "shortName": "M Funchal",
+            "squadMarketValue": null,
+            "crestUrl": "http://upload.wikimedia.org/wikipedia/de/3/3b/Marítimo_Funchal.svg"
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "http://api.football-data.org/v1/teams/507"
+                },
+                "fixtures": {
+                    "href": "http://api.football-data.org/v1/teams/507/fixtures"
+                },
+                "players": {
+                    "href": "http://api.football-data.org/v1/teams/507/players"
+                }
+            },
+            "name": "FC Paços de Ferreira",
+            "code": null,
+            "shortName": "Ferreira",
+            "squadMarketValue": null,
+            "crestUrl": "http://upload.wikimedia.org/wikipedia/de/f/f2/FC_Pacos_de_Ferreira.svg"
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "http://api.football-data.org/v1/teams/503"
+                },
+                "fixtures": {
+                    "href": "http://api.football-data.org/v1/teams/503/fixtures"
+                },
+                "players": {
+                    "href": "http://api.football-data.org/v1/teams/503/players"
+                }
+            },
+            "name": "FC Porto",
+            "code": "FCP",
+            "shortName": "Porto",
+            "squadMarketValue": null,
+            "crestUrl": "http://upload.wikimedia.org/wikipedia/de/e/ed/FC_Porto_1922-2005.svg"
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "http://api.football-data.org/v1/teams/582"
+                },
+                "fixtures": {
+                    "href": "http://api.football-data.org/v1/teams/582/fixtures"
+                },
+                "players": {
+                    "href": "http://api.football-data.org/v1/teams/582/players"
+                }
+            },
+            "name": "GD Estoril Praia",
+            "code": null,
+            "shortName": "Estoril",
+            "squadMarketValue": null,
+            "crestUrl": "http://upload.wikimedia.org/wikipedia/de/1/14/GD_Estoril_Praia.svg"
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "http://api.football-data.org/v1/teams/495"
+                },
+                "fixtures": {
+                    "href": "http://api.football-data.org/v1/teams/495/fixtures"
+                },
+                "players": {
+                    "href": "http://api.football-data.org/v1/teams/495/players"
+                }
+            },
+            "name": "SL Benfica",
+            "code": "SLB",
+            "shortName": "Lisbon",
+            "squadMarketValue": null,
+            "crestUrl": "http://upload.wikimedia.org/wikipedia/de/8/89/Logo_Benfica_Lissabon.svg"
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "http://api.football-data.org/v1/teams/497"
+                },
+                "fixtures": {
+                    "href": "http://api.football-data.org/v1/teams/497/fixtures"
+                },
+                "players": {
+                    "href": "http://api.football-data.org/v1/teams/497/players"
+                }
+            },
+            "name": "Sporting Braga",
+            "code": null,
+            "shortName": "Braga",
+            "squadMarketValue": null,
+            "crestUrl": "http://upload.wikimedia.org/wikipedia/de/f/f3/Sporting_Clube_de_Braga.svg"
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "http://api.football-data.org/v1/teams/502"
+                },
+                "fixtures": {
+                    "href": "http://api.football-data.org/v1/teams/502/fixtures"
+                },
+                "players": {
+                    "href": "http://api.football-data.org/v1/teams/502/players"
+                }
+            },
+            "name": "Vitoria Guimaraes",
+            "code": null,
+            "shortName": "Guimares",
+            "squadMarketValue": null,
+            "crestUrl": "http://upload.wikimedia.org/wikipedia/de/8/81/Vitoria_Guimaraes.svg"
+        },
+        {
+            "_links": {
+                "self": {
+                    "href": "http://api.football-data.org/v1/teams/1103"
+                },
+                "fixtures": {
+                    "href": "http://api.football-data.org/v1/teams/1103/fixtures"
+                },
+                "players": {
+                    "href": "http://api.football-data.org/v1/teams/1103/players"
+                }
+            },
+            "name": "G.D. Chaves",
+            "code": null,
+            "shortName": "Chaves",
+            "squadMarketValue": null,
+            "crestUrl": "https://upload.wikimedia.org/wikipedia/en/0/05/G_D_Chaves.png"
+        }
+    ]
+}

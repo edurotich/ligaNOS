@@ -12,7 +12,7 @@ import 'rxjs/add/operator/mergeMap'; // enables flatMap
 })
 export class HomeComponent implements OnInit {
 
-  matches: Matches[];
+  matches: Matches;
   currentMatchday: number;
   changeCurrentMatchday = false;
   arrayOfMatchdays: number[];
@@ -26,8 +26,8 @@ export class HomeComponent implements OnInit {
   }
 
   /**
-   * Subscribes two observables returned from service in order by using flatMap.
-   * Matches subscription is dependent from league info subscription so will only start when 1st has finished.
+   * Subscribes 2 observables returned from service in order by using flatMap.
+   * Matches subscription is dependent from leagueinfo subsc so will only start when 1st has finished.
    *
    * @memberof HomeComponent
    */
@@ -58,7 +58,7 @@ export class HomeComponent implements OnInit {
    */
   getMatches(matchday): void {
     this.footdata.getMatches(matchday).subscribe(
-      (data: any) => {
+      (data: Matches) => {
         this.matches = data;
       }, (err: any) => console.log(err),
       () => {
@@ -79,7 +79,7 @@ export class HomeComponent implements OnInit {
       () => {
         // console.log('finished getLeagueInfo');
         this.footdata.getMatches(this.currentMatchday).subscribe(
-          (data: any) => {
+          (data: Matches) => {
             this.matches = data;
           }, (err: any) => console.log(err),
           () => {
@@ -101,7 +101,7 @@ export class HomeComponent implements OnInit {
   }
 
   /**
-   * This second approach returns a range of numbers to be used inside *ngFor (*ngfor="1 of createRange2()" )
+   * This second approach returns a range of numbers to be used inside *ngFor.
    *
    * @returns {number[]} -  array of numbers from 1 to numberOfMatchdays
    * @memberof HomeComponent
@@ -127,10 +127,14 @@ export class HomeComponent implements OnInit {
         this.currentMatchday = parseInt(matchday, 10);
         break;
       case 1:
-        this.currentMatchday -= 1;
+        if (this.currentMatchday - 1 > 0) {
+          this.currentMatchday -= 1;
+        }
         break;
       case 2:
-        this.currentMatchday += 1;
+        if (this.currentMatchday + 1 < this.arrayOfMatchdays.length) {
+          this.currentMatchday += 1;
+        }
         break;
     }
 

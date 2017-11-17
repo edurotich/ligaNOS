@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('sismos App', () => {
+describe('Liga Nos App', () => {
   let page: AppPage;
 
   beforeEach(() => {

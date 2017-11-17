@@ -1,0 +1,590 @@
+{
+  "_links": {
+    "self": {
+      "href": "http://api.football-data.org/v1/competitions/457/leagueTable/?matchday=10"
+    },
+    "competition": {
+      "href": "http://api.football-data.org/v1/competitions/457"
+    }
+  },
+  "leagueCaption": "Primeira Liga 2017/18",
+  "matchday": 10,
+  "standing": [
+    {
+      "_links": {
+        "team": {
+          "href": "http://api.football-data.org/v1/teams/503"
+        }
+      },
+      "position": 1,
+      "teamName": "FC Porto",
+      "crestURI": "http://upload.wikimedia.org/wikipedia/de/e/ed/FC_Porto_1922-2005.svg",
+      "playedGames": 10,
+      "points": 28,
+      "goals": 28,
+      "goalsAgainst": 4,
+      "goalDifference": 24,
+      "wins": 9,
+      "draws": 1,
+      "losses": 0,
+      "home": {
+        "goals": 21,
+        "goalsAgainst": 3,
+        "wins": 5,
+        "draws": 0,
+        "losses": 0
+      },
+      "away": {
+        "goals": 7,
+        "goalsAgainst": 1,
+        "wins": 4,
+        "draws": 1,
+        "losses": 0
+      }
+    },
+    {
+      "_links": {
+        "team": {
+          "href": "http://api.football-data.org/v1/teams/498"
+        }
+      },
+      "position": 2,
+      "teamName": "Sporting CP",
+      "crestURI": "https://upload.wikimedia.org/wikipedia/en/3/3e/Sporting_Clube_de_Portugal.png",
+      "playedGames": 10,
+      "points": 26,
+      "goals": 22,
+      "goalsAgainst": 5,
+      "goalDifference": 17,
+      "wins": 8,
+      "draws": 2,
+      "losses": 0,
+      "home": {
+        "goals": 10,
+        "goalsAgainst": 2,
+        "wins": 4,
+        "draws": 1,
+        "losses": 0
+      },
+      "away": {
+        "goals": 12,
+        "goalsAgainst": 3,
+        "wins": 4,
+        "draws": 1,
+        "losses": 0
+      }
+    },
+    {
+      "_links": {
+        "team": {
+          "href": "http://api.football-data.org/v1/teams/495"
+        }
+      },
+      "position": 3,
+      "teamName": "SL Benfica",
+      "crestURI": "http://upload.wikimedia.org/wikipedia/de/8/89/Logo_Benfica_Lissabon.svg",
+      "playedGames": 10,
+      "points": 23,
+      "goals": 20,
+      "goalsAgainst": 7,
+      "goalDifference": 13,
+      "wins": 7,
+      "draws": 2,
+      "losses": 1,
+      "home": {
+        "goals": 13,
+        "goalsAgainst": 2,
+        "wins": 5,
+        "draws": 0,
+        "losses": 0
+      },
+      "away": {
+        "goals": 7,
+        "goalsAgainst": 5,
+        "wins": 2,
+        "draws": 2,
+        "losses": 1
+      }
+    },
+    {
+      "_links": {
+        "team": {
+          "href": "http://api.football-data.org/v1/teams/497"
+        }
+      },
+      "position": 4,
+      "teamName": "Sporting Braga",
+      "crestURI": "http://upload.wikimedia.org/wikipedia/de/f/f3/Sporting_Clube_de_Braga.svg",
+      "playedGames": 10,
+      "points": 21,
+      "goals": 17,
+      "goalsAgainst": 9,
+      "goalDifference": 8,
+      "wins": 7,
+      "draws": 0,
+      "losses": 3,
+      "home": {
+        "goals": 11,
+        "goalsAgainst": 3,
+        "wins": 4,
+        "draws": 0,
+        "losses": 1
+      },
+      "away": {
+        "goals": 6,
+        "goalsAgainst": 6,
+        "wins": 3,
+        "draws": 0,
+        "losses": 2
+      }
+    },
+    {
+      "_links": {
+        "team": {
+          "href": "http://api.football-data.org/v1/teams/504"
+        }
+      },
+      "position": 5,
+      "teamName": "Maritimo Funchal",
+      "crestURI": "http://upload.wikimedia.org/wikipedia/de/3/3b/Marítimo_Funchal.svg",
+      "playedGames": 10,
+      "points": 19,
+      "goals": 12,
+      "goalsAgainst": 9,
+      "goalDifference": 3,
+      "wins": 6,
+      "draws": 1,
+      "losses": 3,
+      "home": {
+        "goals": 8,
+        "goalsAgainst": 2,
+        "wins": 5,
+        "draws": 1,
+        "losses": 0
+      },
+      "away": {
+        "goals": 4,
+        "goalsAgainst": 7,
+        "wins": 1,
+        "draws": 0,
+        "losses": 3
+      }
+    },
+    {
+      "_links": {
+        "team": {
+          "href": "http://api.football-data.org/v1/teams/711"
+        }
+      },
+      "position": 6,
+      "teamName": "C.F. Os Belenenses",
+      "crestURI": "http://upload.wikimedia.org/wikipedia/de/d/db/Belenenses_Lissabon.svg",
+      "playedGames": 10,
+      "points": 16,
+      "goals": 13,
+      "goalsAgainst": 13,
+      "goalDifference": 0,
+      "wins": 5,
+      "draws": 1,
+      "losses": 4,
+      "home": {
+        "goals": 8,
+        "goalsAgainst": 2,
+        "wins": 4,
+        "draws": 1,
+        "losses": 0
+      },
+      "away": {
+        "goals": 5,
+        "goalsAgainst": 11,
+        "wins": 1,
+        "draws": 0,
+        "losses": 4
+      }
+    },
+    {
+      "_links": {
+        "team": {
+          "href": "http://api.football-data.org/v1/teams/496"
+        }
+      },
+      "position": 7,
+      "teamName": "FC Rio Ave",
+      "crestURI": "http://upload.wikimedia.org/wikipedia/de/6/63/Rio_Ave_FC.svg",
+      "playedGames": 10,
+      "points": 14,
+      "goals": 9,
+      "goalsAgainst": 8,
+      "goalDifference": 1,
+      "wins": 4,
+      "draws": 2,
+      "losses": 4,
+      "home": {
+        "goals": 7,
+        "goalsAgainst": 5,
+        "wins": 3,
+        "draws": 1,
+        "losses": 2
+      },
+      "away": {
+        "goals": 2,
+        "goalsAgainst": 3,
+        "wins": 1,
+        "draws": 1,
+        "losses": 2
+      }
+    },
+    {
+      "_links": {
+        "team": {
+          "href": "http://api.football-data.org/v1/teams/502"
+        }
+      },
+      "position": 8,
+      "teamName": "Vitoria Guimaraes",
+      "crestURI": "http://upload.wikimedia.org/wikipedia/de/8/81/Vitoria_Guimaraes.svg",
+      "playedGames": 10,
+      "points": 14,
+      "goals": 13,
+      "goalsAgainst": 18,
+      "goalDifference": -5,
+      "wins": 4,
+      "draws": 2,
+      "losses": 4,
+      "home": {
+        "goals": 9,
+        "goalsAgainst": 11,
+        "wins": 3,
+        "draws": 1,
+        "losses": 1
+      },
+      "away": {
+        "goals": 4,
+        "goalsAgainst": 7,
+        "wins": 1,
+        "draws": 1,
+        "losses": 3
+      }
+    },
+    {
+      "_links": {
+        "team": {
+          "href": "http://api.football-data.org/v1/teams/810"
+        }
+      },
+      "position": 9,
+      "teamName": "Boavista Porto FC",
+      "crestURI": "http://upload.wikimedia.org/wikipedia/en/4/40/Boavista_F.C._logo.svg",
+      "playedGames": 10,
+      "points": 13,
+      "goals": 10,
+      "goalsAgainst": 11,
+      "goalDifference": -1,
+      "wins": 4,
+      "draws": 1,
+      "losses": 5,
+      "home": {
+        "goals": 5,
+        "goalsAgainst": 6,
+        "wins": 3,
+        "draws": 0,
+        "losses": 2
+      },
+      "away": {
+        "goals": 5,
+        "goalsAgainst": 5,
+        "wins": 1,
+        "draws": 1,
+        "losses": 3
+      }
+    },
+    {
+      "_links": {
+        "team": {
+          "href": "http://api.football-data.org/v1/teams/507"
+        }
+      },
+      "position": 10,
+      "teamName": "FC Paços de Ferreira",
+      "crestURI": "http://upload.wikimedia.org/wikipedia/de/f/f2/FC_Pacos_de_Ferreira.svg",
+      "playedGames": 10,
+      "points": 12,
+      "goals": 11,
+      "goalsAgainst": 17,
+      "goalDifference": -6,
+      "wins": 3,
+      "draws": 3,
+      "losses": 4,
+      "home": {
+        "goals": 7,
+        "goalsAgainst": 4,
+        "wins": 3,
+        "draws": 2,
+        "losses": 0
+      },
+      "away": {
+        "goals": 4,
+        "goalsAgainst": 13,
+        "wins": 0,
+        "draws": 1,
+        "losses": 4
+      }
+    },
+    {
+      "_links": {
+        "team": {
+          "href": "http://api.football-data.org/v1/teams/1808"
+        }
+      },
+      "position": 11,
+      "teamName": "Portimonense S.C.",
+      "crestURI": "https://upload.wikimedia.org/wikipedia/en/e/e9/Portimonense_Sporting_Clube.png",
+      "playedGames": 10,
+      "points": 11,
+      "goals": 19,
+      "goalsAgainst": 22,
+      "goalDifference": -3,
+      "wins": 3,
+      "draws": 2,
+      "losses": 5,
+      "home": {
+        "goals": 12,
+        "goalsAgainst": 8,
+        "wins": 3,
+        "draws": 1,
+        "losses": 1
+      },
+      "away": {
+        "goals": 7,
+        "goalsAgainst": 14,
+        "wins": 0,
+        "draws": 1,
+        "losses": 4
+      }
+    },
+    {
+      "_links": {
+        "team": {
+          "href": "http://api.football-data.org/v1/teams/500"
+        }
+      },
+      "position": 12,
+      "teamName": "Feirense",
+      "crestURI": null,
+      "playedGames": 10,
+      "points": 11,
+      "goals": 10,
+      "goalsAgainst": 13,
+      "goalDifference": -3,
+      "wins": 3,
+      "draws": 2,
+      "losses": 5,
+      "home": {
+        "goals": 7,
+        "goalsAgainst": 9,
+        "wins": 2,
+        "draws": 1,
+        "losses": 2
+      },
+      "away": {
+        "goals": 3,
+        "goalsAgainst": 4,
+        "wins": 1,
+        "draws": 1,
+        "losses": 3
+      }
+    },
+    {
+      "_links": {
+        "team": {
+          "href": "http://api.football-data.org/v1/teams/506"
+        }
+      },
+      "position": 13,
+      "teamName": "Vitoria Setubal",
+      "crestURI": "http://upload.wikimedia.org/wikipedia/de/b/bd/Vitória_Setúbal.svg",
+      "playedGames": 10,
+      "points": 10,
+      "goals": 12,
+      "goalsAgainst": 14,
+      "goalDifference": -2,
+      "wins": 2,
+      "draws": 4,
+      "losses": 4,
+      "home": {
+        "goals": 8,
+        "goalsAgainst": 4,
+        "wins": 2,
+        "draws": 3,
+        "losses": 0
+      },
+      "away": {
+        "goals": 4,
+        "goalsAgainst": 10,
+        "wins": 0,
+        "draws": 1,
+        "losses": 4
+      }
+    },
+    {
+      "_links": {
+        "team": {
+          "href": "http://api.football-data.org/v1/teams/1049"
+        }
+      },
+      "position": 14,
+      "teamName": "CD Tondela",
+      "crestURI": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Emblema_CD_Tondela.png",
+      "playedGames": 10,
+      "points": 9,
+      "goals": 12,
+      "goalsAgainst": 14,
+      "goalDifference": -2,
+      "wins": 2,
+      "draws": 3,
+      "losses": 5,
+      "home": {
+        "goals": 7,
+        "goalsAgainst": 8,
+        "wins": 1,
+        "draws": 1,
+        "losses": 3
+      },
+      "away": {
+        "goals": 5,
+        "goalsAgainst": 6,
+        "wins": 1,
+        "draws": 2,
+        "losses": 2
+      }
+    },
+    {
+      "_links": {
+        "team": {
+          "href": "http://api.football-data.org/v1/teams/1103"
+        }
+      },
+      "position": 15,
+      "teamName": "G.D. Chaves",
+      "crestURI": "https://upload.wikimedia.org/wikipedia/en/0/05/G_D_Chaves.png",
+      "playedGames": 10,
+      "points": 8,
+      "goals": 10,
+      "goalsAgainst": 17,
+      "goalDifference": -7,
+      "wins": 2,
+      "draws": 2,
+      "losses": 6,
+      "home": {
+        "goals": 4,
+        "goalsAgainst": 4,
+        "wins": 1,
+        "draws": 1,
+        "losses": 2
+      },
+      "away": {
+        "goals": 6,
+        "goalsAgainst": 13,
+        "wins": 1,
+        "draws": 1,
+        "losses": 4
+      }
+    },
+    {
+      "_links": {
+        "team": {
+          "href": "http://api.football-data.org/v1/teams/1809"
+        }
+      },
+      "position": 16,
+      "teamName": "Desportivo Aves",
+      "crestURI": null,
+      "playedGames": 10,
+      "points": 6,
+      "goals": 9,
+      "goalsAgainst": 18,
+      "goalDifference": -9,
+      "wins": 1,
+      "draws": 3,
+      "losses": 6,
+      "home": {
+        "goals": 4,
+        "goalsAgainst": 11,
+        "wins": 1,
+        "draws": 1,
+        "losses": 4
+      },
+      "away": {
+        "goals": 5,
+        "goalsAgainst": 7,
+        "wins": 0,
+        "draws": 2,
+        "losses": 2
+      }
+    },
+    {
+      "_links": {
+        "team": {
+          "href": "http://api.football-data.org/v1/teams/583"
+        }
+      },
+      "position": 17,
+      "teamName": "Moreirense FC",
+      "crestURI": "https://upload.wikimedia.org/wikipedia/pt/8/8c/Logo_Moreirense.svg",
+      "playedGames": 10,
+      "points": 6,
+      "goals": 6,
+      "goalsAgainst": 18,
+      "goalDifference": -12,
+      "wins": 1,
+      "draws": 3,
+      "losses": 6,
+      "home": {
+        "goals": 1,
+        "goalsAgainst": 5,
+        "wins": 0,
+        "draws": 2,
+        "losses": 2
+      },
+      "away": {
+        "goals": 5,
+        "goalsAgainst": 13,
+        "wins": 1,
+        "draws": 1,
+        "losses": 4
+      }
+    },
+    {
+      "_links": {
+        "team": {
+          "href": "http://api.football-data.org/v1/teams/582"
+        }
+      },
+      "position": 18,
+      "teamName": "GD Estoril Praia",
+      "crestURI": "http://upload.wikimedia.org/wikipedia/de/1/14/GD_Estoril_Praia.svg",
+      "playedGames": 10,
+      "points": 6,
+      "goals": 8,
+      "goalsAgainst": 24,
+      "goalDifference": -16,
+      "wins": 2,
+      "draws": 0,
+      "losses": 8,
+      "home": {
+        "goals": 3,
+        "goalsAgainst": 7,
+        "wins": 1,
+        "draws": 0,
+        "losses": 3
+      },
+      "away": {
+        "goals": 5,
+        "goalsAgainst": 17,
+        "wins": 1,
+        "draws": 0,
+        "losses": 5
+      }
+    }
+  ]
+}

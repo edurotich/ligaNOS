@@ -37,7 +37,7 @@ const colors: any = {
   ]
 })
 export class CalendarComponent implements OnInit {
-  calendar: Calendar[];
+  calendar: Calendar;
 
   view = 'month';
   viewDate: Date = new Date();
@@ -55,6 +55,10 @@ export class CalendarComponent implements OnInit {
 
   constructor(private modal: NgbModal, private footdata: FootdataService) { }
 
+  ngOnInit() {
+    this.getAllMatches();
+  }
+
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
       if (
@@ -69,9 +73,6 @@ export class CalendarComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-    this.getAllMatches();
-  }
 /**
  * Subscribes an observable returned from the service and sets data to type of Calendar
  *
@@ -79,7 +80,7 @@ export class CalendarComponent implements OnInit {
  */
 getAllMatches(): void {
     this.footdata.getAllMatches().subscribe(
-      (data: any) => {
+      (data: Calendar) => {
         this.calendar = data;
 
         this.calendar['fixtures'].forEach(d => {

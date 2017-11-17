@@ -1,0 +1,283 @@
+{
+  "_links": {
+    "self": {
+      "href": "http://api.football-data.org/v1/competitions/457/fixtures"
+    },
+    "competition": {
+      "href": "http://api.football-data.org/v1/competitions/457"
+    }
+  },
+  "count": 9,
+  "fixtures": [
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/164101"
+        },
+        "competition": {
+          "href": "http://api.football-data.org/v1/competitions/457"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/506"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/1809"
+        }
+      },
+      "date": "2017-11-03T21:30:00Z",
+      "status": "FINISHED",
+      "matchday": 11,
+      "homeTeamName": "Vitoria Setubal",
+      "awayTeamName": "Desportivo Aves",
+      "result": {
+        "goalsHomeTeam": 0,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        }
+      },
+      "odds": null
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/164205"
+        },
+        "competition": {
+          "href": "http://api.football-data.org/v1/competitions/457"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/583"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/1808"
+        }
+      },
+      "date": "2017-11-04T17:00:00Z",
+      "status": "FINISHED",
+      "matchday": 11,
+      "homeTeamName": "Moreirense FC",
+      "awayTeamName": "Portimonense S.C.",
+      "result": {
+        "goalsHomeTeam": 1,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 1,
+          "goalsAwayTeam": 1
+        }
+      },
+      "odds": null
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/164099"
+        },
+        "competition": {
+          "href": "http://api.football-data.org/v1/competitions/457"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/1049"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/810"
+        }
+      },
+      "date": "2017-11-04T17:00:00Z",
+      "status": "FINISHED",
+      "matchday": 11,
+      "homeTeamName": "CD Tondela",
+      "awayTeamName": "Boavista Porto FC",
+      "result": {
+        "goalsHomeTeam": 3,
+        "goalsAwayTeam": 2,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        }
+      },
+      "odds": null
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/164095"
+        },
+        "competition": {
+          "href": "http://api.football-data.org/v1/competitions/457"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/582"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/496"
+        }
+      },
+      "date": "2017-11-04T19:15:00Z",
+      "status": "FINISHED",
+      "matchday": 11,
+      "homeTeamName": "GD Estoril Praia",
+      "awayTeamName": "FC Rio Ave",
+      "result": {
+        "goalsHomeTeam": 0,
+        "goalsAwayTeam": 2,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 1
+        }
+      },
+      "odds": null
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/164097"
+        },
+        "competition": {
+          "href": "http://api.football-data.org/v1/competitions/457"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/503"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/711"
+        }
+      },
+      "date": "2017-11-04T21:30:00Z",
+      "status": "FINISHED",
+      "matchday": 11,
+      "homeTeamName": "FC Porto",
+      "awayTeamName": "C.F. Os Belenenses",
+      "result": {
+        "goalsHomeTeam": 2,
+        "goalsAwayTeam": 0,
+        "halfTime": {
+          "goalsHomeTeam": 1,
+          "goalsAwayTeam": 0
+        }
+      },
+      "odds": null
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/164094"
+        },
+        "competition": {
+          "href": "http://api.football-data.org/v1/competitions/457"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/1103"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/507"
+        }
+      },
+      "date": "2017-11-05T17:00:00Z",
+      "status": "FINISHED",
+      "matchday": 11,
+      "homeTeamName": "G.D. Chaves",
+      "awayTeamName": "FC Paços de Ferreira",
+      "result": {
+        "goalsHomeTeam": 4,
+        "goalsAwayTeam": 2,
+        "halfTime": {
+          "goalsHomeTeam": 1,
+          "goalsAwayTeam": 1
+        }
+      },
+      "odds": null
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/164096"
+        },
+        "competition": {
+          "href": "http://api.football-data.org/v1/competitions/457"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/500"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/504"
+        }
+      },
+      "date": "2017-11-05T17:00:00Z",
+      "status": "FINISHED",
+      "matchday": 11,
+      "homeTeamName": "Feirense",
+      "awayTeamName": "Maritimo Funchal",
+      "result": {
+        "goalsHomeTeam": 0,
+        "goalsAwayTeam": 1,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 1
+        }
+      },
+      "odds": null
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/164100"
+        },
+        "competition": {
+          "href": "http://api.football-data.org/v1/competitions/457"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/502"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/495"
+        }
+      },
+      "date": "2017-11-05T19:00:00Z",
+      "status": "FINISHED",
+      "matchday": 11,
+      "homeTeamName": "Vitoria Guimaraes",
+      "awayTeamName": "SL Benfica",
+      "result": {
+        "goalsHomeTeam": 1,
+        "goalsAwayTeam": 3,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 1
+        }
+      },
+      "odds": null
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "http://api.football-data.org/v1/fixtures/164098"
+        },
+        "competition": {
+          "href": "http://api.football-data.org/v1/competitions/457"
+        },
+        "homeTeam": {
+          "href": "http://api.football-data.org/v1/teams/498"
+        },
+        "awayTeam": {
+          "href": "http://api.football-data.org/v1/teams/497"
+        }
+      },
+      "date": "2017-11-05T21:15:00Z",
+      "status": "FINISHED",
+      "matchday": 11,
+      "homeTeamName": "Sporting CP",
+      "awayTeamName": "Sporting Braga",
+      "result": {
+        "goalsHomeTeam": 2,
+        "goalsAwayTeam": 2,
+        "halfTime": {
+          "goalsHomeTeam": 0,
+          "goalsAwayTeam": 0
+        }
+      },
+      "odds": null
+    }
+  ]
+}

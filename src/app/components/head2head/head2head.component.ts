@@ -14,7 +14,7 @@ import 'rxjs/add/operator/mergeMap';
 })
 export class Head2headComponent implements OnInit {
 
-  head2head: Head2Head[];
+  head2head: Head2Head;
   head2headId: number;
   homeTeamLogo: string;
   awayTeamLogo: string;
@@ -57,7 +57,7 @@ export class Head2headComponent implements OnInit {
    */
   getHead2HeadAndTeamInfo(): void {
     this.footdata.getHead2Head(this.head2headId).subscribe(
-      data => {
+      (data: Head2Head) => {
         this.head2head = data;
 
         Observable.forkJoin(
@@ -79,18 +79,18 @@ export class Head2headComponent implements OnInit {
   /**
    * Receives data from the html component, counts team goals and returns it back
    *
-   * @param {any[]} data - data received on the html component.
+   * @param {Head2Head[]} data - data sent from the html component.
    * @param {string} teamName - needed to distinguish when counting goals for each team.
    * @returns {number} - the total of goals
    * @memberof Head2headComponent
    */
-  countTeamGoals(data: any[], teamName: string): number {
+  countTeamGoals(data: Head2Head[], teamName: string): number {
     let total = 0;
     data.forEach((d) => {
-      if (teamName === d.homeTeamName) {
-        total += parseInt(d.result.goalsHomeTeam, 10);
-      } else if (teamName === d.awayTeamName) {
-        total += parseInt(d.result.goalsAwayTeam, 10);
+      if (teamName === d['homeTeamName']) {
+        total += parseInt(d['result'].goalsHomeTeam, 10);
+      } else if (teamName === d['awayTeamName']) {
+        total += parseInt(d['result'].goalsAwayTeam, 10);
       }
     });
     return total;

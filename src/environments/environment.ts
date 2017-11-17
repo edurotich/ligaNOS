@@ -6,5 +6,6 @@
 export const environment = {
   production: false,
   authToken: '29132a8e28df4ef784a8d0e853aeadee',
-  api_url: 'http://api.football-data.org/v1/'
+  api_url: 'http://api.football-data.org/v1/',
+  localjson: false
 };

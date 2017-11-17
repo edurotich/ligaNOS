@@ -1,0 +1,413 @@
+{
+    "fixture": {
+        "_links": {
+            "self": {
+                "href": "http://api.football-data.org/v1/fixtures/164125"
+            },
+            "competition": {
+                "href": "http://api.football-data.org/v1/competitions/457"
+            },
+            "homeTeam": {
+                "href": "http://api.football-data.org/v1/teams/498"
+            },
+            "awayTeam": {
+                "href": "http://api.football-data.org/v1/teams/503"
+            }
+        },
+        "date": "2017-10-01T18:15:00Z",
+        "status": "FINISHED",
+        "matchday": 8,
+        "homeTeamName": "Sporting CP",
+        "awayTeamName": "FC Porto",
+        "result": {
+            "goalsHomeTeam": 0,
+            "goalsAwayTeam": 0,
+            "halfTime": {
+                "goalsHomeTeam": 0,
+                "goalsAwayTeam": 0
+            }
+        },
+        "odds": null
+    },
+    "head2head": {
+        "count": 10,
+        "timeFrameStart": "2013-03-02",
+        "timeFrameEnd": "2017-10-01",
+        "homeTeamWins": 4,
+        "awayTeamWins": 3,
+        "draws": 3,
+        "lastHomeWinHomeTeam": {
+            "_links": {
+                "self": {
+                    "href": "http://api.football-data.org/v1/fixtures/155139"
+                },
+                "competition": {
+                    "href": "http://api.football-data.org/v1/competitions/439"
+                },
+                "homeTeam": {
+                    "href": "http://api.football-data.org/v1/teams/498"
+                },
+                "awayTeam": {
+                    "href": "http://api.football-data.org/v1/teams/503"
+                }
+            },
+            "date": "2016-08-28T17:00:00Z",
+            "status": "FINISHED",
+            "matchday": 3,
+            "homeTeamName": "Sporting CP",
+            "awayTeamName": "FC Porto",
+            "result": {
+                "goalsHomeTeam": 2,
+                "goalsAwayTeam": 1,
+                "halfTime": {
+                    "goalsHomeTeam": 2,
+                    "goalsAwayTeam": 1
+                }
+            },
+            "odds": null
+        },
+        "lastWinHomeTeam": {
+            "_links": {
+                "self": {
+                    "href": "http://api.football-data.org/v1/fixtures/155139"
+                },
+                "competition": {
+                    "href": "http://api.football-data.org/v1/competitions/439"
+                },
+                "homeTeam": {
+                    "href": "http://api.football-data.org/v1/teams/498"
+                },
+                "awayTeam": {
+                    "href": "http://api.football-data.org/v1/teams/503"
+                }
+            },
+            "date": "2016-08-28T17:00:00Z",
+            "status": "FINISHED",
+            "matchday": 3,
+            "homeTeamName": "Sporting CP",
+            "awayTeamName": "FC Porto",
+            "result": {
+                "goalsHomeTeam": 2,
+                "goalsAwayTeam": 1,
+                "halfTime": {
+                    "goalsHomeTeam": 2,
+                    "goalsAwayTeam": 1
+                }
+            },
+            "odds": null
+        },
+        "lastAwayWinAwayTeam": null,
+        "lastWinAwayTeam": {
+            "_links": {
+                "self": {
+                    "href": "http://api.football-data.org/v1/fixtures/155007"
+                },
+                "competition": {
+                    "href": "http://api.football-data.org/v1/competitions/439"
+                },
+                "homeTeam": {
+                    "href": "http://api.football-data.org/v1/teams/503"
+                },
+                "awayTeam": {
+                    "href": "http://api.football-data.org/v1/teams/498"
+                }
+            },
+            "date": "2017-02-04T20:30:00Z",
+            "status": "FINISHED",
+            "matchday": 20,
+            "homeTeamName": "FC Porto",
+            "awayTeamName": "Sporting CP",
+            "result": {
+                "goalsHomeTeam": 2,
+                "goalsAwayTeam": 1,
+                "halfTime": {
+                    "goalsHomeTeam": 2,
+                    "goalsAwayTeam": 0
+                }
+            },
+            "odds": {
+                "homeWin": 2.0,
+                "draw": 3.3,
+                "awayWin": 3.75
+            }
+        },
+        "fixtures": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http://api.football-data.org/v1/fixtures/164125"
+                    },
+                    "competition": {
+                        "href": "http://api.football-data.org/v1/competitions/457"
+                    },
+                    "homeTeam": {
+                        "href": "http://api.football-data.org/v1/teams/498"
+                    },
+                    "awayTeam": {
+                        "href": "http://api.football-data.org/v1/teams/503"
+                    }
+                },
+                "date": "2017-10-01T18:15:00Z",
+                "status": "FINISHED",
+                "matchday": 8,
+                "homeTeamName": "Sporting CP",
+                "awayTeamName": "FC Porto",
+                "result": {
+                    "goalsHomeTeam": 0,
+                    "goalsAwayTeam": 0,
+                    "halfTime": {
+                        "goalsHomeTeam": 0,
+                        "goalsAwayTeam": 0
+                    }
+                },
+                "odds": null
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http://api.football-data.org/v1/fixtures/155007"
+                    },
+                    "competition": {
+                        "href": "http://api.football-data.org/v1/competitions/439"
+                    },
+                    "homeTeam": {
+                        "href": "http://api.football-data.org/v1/teams/503"
+                    },
+                    "awayTeam": {
+                        "href": "http://api.football-data.org/v1/teams/498"
+                    }
+                },
+                "date": "2017-02-04T20:30:00Z",
+                "status": "FINISHED",
+                "matchday": 20,
+                "homeTeamName": "FC Porto",
+                "awayTeamName": "Sporting CP",
+                "result": {
+                    "goalsHomeTeam": 2,
+                    "goalsAwayTeam": 1,
+                    "halfTime": {
+                        "goalsHomeTeam": 2,
+                        "goalsAwayTeam": 0
+                    }
+                },
+                "odds": {
+                    "homeWin": 2.0,
+                    "draw": 3.3,
+                    "awayWin": 3.75
+                }
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http://api.football-data.org/v1/fixtures/155139"
+                    },
+                    "competition": {
+                        "href": "http://api.football-data.org/v1/competitions/439"
+                    },
+                    "homeTeam": {
+                        "href": "http://api.football-data.org/v1/teams/498"
+                    },
+                    "awayTeam": {
+                        "href": "http://api.football-data.org/v1/teams/503"
+                    }
+                },
+                "date": "2016-08-28T17:00:00Z",
+                "status": "FINISHED",
+                "matchday": 3,
+                "homeTeamName": "Sporting CP",
+                "awayTeamName": "FC Porto",
+                "result": {
+                    "goalsHomeTeam": 2,
+                    "goalsAwayTeam": 1,
+                    "halfTime": {
+                        "goalsHomeTeam": 2,
+                        "goalsAwayTeam": 1
+                    }
+                },
+                "odds": null
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http://api.football-data.org/v1/fixtures/148317"
+                    },
+                    "competition": {
+                        "href": "http://api.football-data.org/v1/competitions/402"
+                    },
+                    "homeTeam": {
+                        "href": "http://api.football-data.org/v1/teams/503"
+                    },
+                    "awayTeam": {
+                        "href": "http://api.football-data.org/v1/teams/498"
+                    }
+                },
+                "date": "2016-04-30T17:30:00Z",
+                "status": "FINISHED",
+                "matchday": 32,
+                "homeTeamName": "FC Porto",
+                "awayTeamName": "Sporting CP",
+                "result": {
+                    "goalsHomeTeam": 1,
+                    "goalsAwayTeam": 3
+                },
+                "odds": null
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http://api.football-data.org/v1/fixtures/148436"
+                    },
+                    "competition": {
+                        "href": "http://api.football-data.org/v1/competitions/402"
+                    },
+                    "homeTeam": {
+                        "href": "http://api.football-data.org/v1/teams/498"
+                    },
+                    "awayTeam": {
+                        "href": "http://api.football-data.org/v1/teams/503"
+                    }
+                },
+                "date": "2016-01-02T20:45:00Z",
+                "status": "FINISHED",
+                "matchday": 15,
+                "homeTeamName": "Sporting CP",
+                "awayTeamName": "FC Porto",
+                "result": {
+                    "goalsHomeTeam": 2,
+                    "goalsAwayTeam": 0
+                },
+                "odds": null
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http://api.football-data.org/v1/fixtures/141762"
+                    },
+                    "competition": {
+                        "href": "http://api.football-data.org/v1/competitions/368"
+                    },
+                    "homeTeam": {
+                        "href": "http://api.football-data.org/v1/teams/503"
+                    },
+                    "awayTeam": {
+                        "href": "http://api.football-data.org/v1/teams/498"
+                    }
+                },
+                "date": "2015-03-01T19:15:00Z",
+                "status": "FINISHED",
+                "matchday": 23,
+                "homeTeamName": "FC Porto",
+                "awayTeamName": "Sporting CP",
+                "result": {
+                    "goalsHomeTeam": 3,
+                    "goalsAwayTeam": 0
+                },
+                "odds": null
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http://api.football-data.org/v1/fixtures/141871"
+                    },
+                    "competition": {
+                        "href": "http://api.football-data.org/v1/competitions/368"
+                    },
+                    "homeTeam": {
+                        "href": "http://api.football-data.org/v1/teams/498"
+                    },
+                    "awayTeam": {
+                        "href": "http://api.football-data.org/v1/teams/503"
+                    }
+                },
+                "date": "2014-09-25T22:00:00Z",
+                "status": "FINISHED",
+                "matchday": 6,
+                "homeTeamName": "Sporting CP",
+                "awayTeamName": "FC Porto",
+                "result": {
+                    "goalsHomeTeam": 1,
+                    "goalsAwayTeam": 1
+                },
+                "odds": null
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http://api.football-data.org/v1/fixtures/133762"
+                    },
+                    "competition": {
+                        "href": "http://api.football-data.org/v1/competitions/348"
+                    },
+                    "homeTeam": {
+                        "href": "http://api.football-data.org/v1/teams/498"
+                    },
+                    "awayTeam": {
+                        "href": "http://api.football-data.org/v1/teams/503"
+                    }
+                },
+                "date": "2014-03-16T19:15:00Z",
+                "status": null,
+                "matchday": 23,
+                "homeTeamName": "Sporting CP",
+                "awayTeamName": "FC Porto",
+                "result": {
+                    "goalsHomeTeam": 1,
+                    "goalsAwayTeam": 0
+                },
+                "odds": null
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http://api.football-data.org/v1/fixtures/133852"
+                    },
+                    "competition": {
+                        "href": "http://api.football-data.org/v1/competitions/348"
+                    },
+                    "homeTeam": {
+                        "href": "http://api.football-data.org/v1/teams/503"
+                    },
+                    "awayTeam": {
+                        "href": "http://api.football-data.org/v1/teams/498"
+                    }
+                },
+                "date": "2013-10-26T22:00:00Z",
+                "status": null,
+                "matchday": 8,
+                "homeTeamName": "FC Porto",
+                "awayTeamName": "Sporting CP",
+                "result": {
+                    "goalsHomeTeam": 3,
+                    "goalsAwayTeam": 1
+                },
+                "odds": null
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": "http://api.football-data.org/v1/fixtures/129610"
+                    },
+                    "competition": {
+                        "href": "http://api.football-data.org/v1/competitions/305"
+                    },
+                    "homeTeam": {
+                        "href": "http://api.football-data.org/v1/teams/498"
+                    },
+                    "awayTeam": {
+                        "href": "http://api.football-data.org/v1/teams/503"
+                    }
+                },
+                "date": "2013-03-02T19:45:00Z",
+                "status": null,
+                "matchday": 21,
+                "homeTeamName": "Sporting CP",
+                "awayTeamName": "FC Porto",
+                "result": {
+                    "goalsHomeTeam": 0,
+                    "goalsAwayTeam": 0
+                },
+                "odds": null
+            }
+        ]
+    }
+}

@@ -10,7 +10,7 @@ import { HelperService } from '../../services/helper.service';
 })
 export class TeamComponent implements OnInit {
 
-  teams: Teams[];
+  teams: Teams;
 
   constructor(private footdata: FootdataService, private helper: HelperService) { }
 
@@ -25,7 +25,7 @@ export class TeamComponent implements OnInit {
    */
   getAllLeagueTeams(): void {
     this.footdata.getAllLeagueTeams().subscribe(
-      (data: any) => {
+      (data: Teams) => {
         this.teams = data;
       }, (err: any) => console.log(err),
       () => {
