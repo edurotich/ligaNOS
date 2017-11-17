@@ -10,13 +10,11 @@ An Angular app that consumes from [footbal-data](http://www.football-data.org/in
 
 ## Screenshots
 
-<img src="https://github.com/miguelsaferreira/LigaNOS/blob/master/src/assets/images/home.png" width="270"/>
-<img src="https://github.com/miguelsaferreira/LigaNOS/blob/master/src/assets/images/headtohead.png" width="270"/>
-<img src="https://github.com/miguelsaferreira/LigaNOS/blob/master/src/assets/images/leaguetable.png" width="270"/>
-<img src="https://github.com/miguelsaferreira/LigaNOS/blob/master/src/assets/images/calendar.png" width="270"/>
-<img src="https://github.com/miguelsaferreira/LigaNOS/blob/master/src/assets/images/leaguestats.png" width="270"/>
-<img src="https://github.com/miguelsaferreira/LigaNOS/blob/master/src/assets/images/teams.png" width="270"/>
-<img src="https://github.com/miguelsaferreira/LigaNOS/blob/master/src/assets/images/teamsquad.png" width="270"/>
+| ![Home](https://github.com/miguelsaferreira/LigaNOS/blob/master/src/assets/images/home.png)  | ![Headtohead](https://github.com/miguelsaferreira/LigaNOS/blob/master/src/assets/images/headtohead.png) | ![Leaguetable](https://github.com/miguelsaferreira/LigaNOS/blob/master/src/assets/images/leaguetable.png) |
+|-|-|-|
+| ![Calendar](https://github.com/miguelsaferreira/LigaNOS/blob/master/src/assets/images/calendar.png) | ![Leaguestats](https://github.com/miguelsaferreira/LigaNOS/blob/master/src/assets/images/leaguestats.png) | ![Teams](https://github.com/miguelsaferreira/LigaNOS/blob/master/src/assets/images/teams.png) |
+| ![Teamsquad](https://github.com/miguelsaferreira/LigaNOS/blob/master/src/assets/images/teamsquad.png) |
+
 
 ## Getting started 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes
@@ -27,11 +25,16 @@ These instructions will get you a copy of the project up and running on your loc
 * An API key from [footbal-data](http://www.football-data.org/) or you can run this project locally by setting localjson to true in the environment.ts file.
 
 ### Installing
+
 ```
-What you will need in your enviroment.ts file:
+Run npm install to tnstall the dependencies in the local node_modules folder
+```
+
+```
+Setup your enviroment.ts file:
 - authToken: 'yourAPIKey'
 - api_url: ' 'http://api.football-data.org/v1/'
-- localjson: boolean  // false => test with local json  | true => use API 
+- localjson: boolean  // false => use API | true => test with local json
 ```
 
 ## Development server
